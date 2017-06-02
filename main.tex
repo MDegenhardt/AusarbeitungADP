@@ -1,0 +1,93 @@
+\documentclass[colorback,longdoc,bigchapter,accentcolor=tud2c,11pt]{tudreport}
+
+\usepackage{hyperref}
+\usepackage{subfigure}
+\usepackage{epstopdf}
+\usepackage[]{acronym}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+
+
+\usepackage{subfigure}
+
+
+\usepackage{geometry}
+\geometry{a4paper,left=25mm,right=20mm, top=1.5cm, bottom=1.5cm}
+\usepackage{mathdesign}
+\usepackage[]{subfigure}
+\usepackage[]{graphicx}
+%\usepackage[]{natbib}
+\usepackage[]{amsmath}
+\usepackage{dsfont}
+\usepackage{color}
+
+
+\usepackage[ruled,chapter]{algorithm}
+\usepackage[]{algorithmic}
+
+
+\definecolor{Pink}{rgb}{1.,0.75,0.8}
+%Eigene Befehle
+\newcommand{\todo}{\textcolor{Pink}{\textbf{ToDo}}}
+\newcommand{\image}{\textcolor{Pink}{\textbf{\\insert Image\\}}}
+\newcommand{\quelle}{\textcolor{Pink}{\textbf{Quellenangabe}}}
+\newcommand{\link}{\textcolor{Pink}{\textbf{Link}}}
+\newcommand{\formel}{\textcolor{Pink}{\textbf{\\Formel\\}}}
+% Pfad entlang dem die Bilder gesucht werden.
+\graphicspath{{bilder/}}
+
+\title{Wirkungsgraddefinitionen angewandter CFD in Turbomaschinen}
+\subtitle{ADP | Keijo Buss, Dominik Henzel, Markus Degenhardt, Simon Lippert }
+\subsubtitle{Betreuer: Faramarz Bakhtiari, Marius Schneider | Prof.Dr.-Ing.H.-P. Schiffer}
+
+%Hier wird entweder ein Text für das Institut angewählt oder ein Logo
+%\institution{Fachgebiet fr \\Numerische Berechnungsverfahren \\im Maschinenbau}
+\setinstitutionlogo[height]{CE}
+
+%%% Untere Titelrückseite
+\lowertitleback{%
+	Keijo Buss, Dominik Henzel, Markus Degenhardt, Simon Lippert\\
+	Studiengang: Computational Engineering M.Sc.\\ \\
+	ADP\\
+	Thema: Wirkungsgraddefinitionen angewandter CFD in Turbomaschinen\\\\
+	Eingereicht: dd.mm.2017\\ \\
+	%Rahmeninformationen
+	Betreuer: Faramarz Bakhtiari\\
+	\hspace*{4em} Marius Schneider\\\\
+	Prof.Dr.-Ing.H.-P. Schiffer \\
+	Fachgebiet Gasturbinen, Luft- und Raumfahrtantriebe\\
+	Technische Universität Darmstadt\\
+	Otto-Berndt-Straße 2\\
+	64287 Darmstadt}
+% %%%%%%%%%%%%%%%%%%% Hier beginnt das Dokument
+\begin{document}
+	\maketitle
+	% Verzeichnisse mit römischen Seitenzahlen
+	\cleardoublepage
+	\setcounter{page}{1}
+	\pagenumbering{roman} 
+	\include{eid} 
+	\include{abstract}
+	\tableofcontents
+	\listoffigures
+	\listoftables
+	
+	% Eigentlicher Text mit arabischen Seitenzahlen
+	\cleardoublepage
+	\pagenumbering{arabic}
+	\setcounter{page}{1}
+	%Einbinden der einzelnen Kapitel
+	\include{beispiele}
+	\include{einleitung}
+	\include{vorgehen}
+	\include{aachenturbine}
+	\include{auswertungstool}
+	\include{kanal}
+	%% Bibliographie
+	\bibliographystyle{plain}
+	\bibliography{literatur}
+	%Appendix
+	%\appendix
+	%\include{anhanga}
+\end{document} 
+
