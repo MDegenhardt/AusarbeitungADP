@@ -1,0 +1,53 @@
+\chapter{Aachen-Turbine}
+\label{cha:aachen}
+Zur Analyse der verschiedenen Wirkungsgraddefinitionen wurde eine sogenannte Aachen-Turbine, das heißt eine Turbine mit einfachen Schaufeln ohne Krümmung in Radialrichtung simuliert. In diesem Kapitel wird zunächst die Geometrie und die durchgeführte Gitterstudie vorgestellt. Danach werden die ermittelten Wirkungsgrade miteinander verglichen und Unterschiede vorgestellt.
+\section{Geometrie}
+\label{sec:aachengeo}
+  \begin{figure}[htbp]
+	\centering
+	\label{fig:imgAachenTurbine}
+	\includegraphics[width=0.7\textwidth]{AachenTurbine_trans.png}
+	\caption{Aachen-Turbine}
+\end{figure} 
+Die verwendete Geometrie basiert auf der Aachen-Turbine, die auch in den Untersuchungen von TO DO verwendet wurde. Es wurden dabei nur anderthalb Stufen berechnet, um den Rechenaufwand der Simulationen gering zu halten und der Vergleich der Wirkungsdefinitionen auch für diesen Aufbau möglich ist. Die Geometrie der Aachen-Turbine mit Gitter ist in der Abbildung \ref{fig:aachengebiet} zu sehen. TODOTODOTODO
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{aachenmitgitter.png}
+\caption{Eine dreidimensionale Ansicht der Aachen-Turbine mit Gitter.}
+\label{fig:aachengebiet}
+\end{figure}
+Die Aachen-Turbine besteht aus zwei Statoren und einem Rotor. Der vordere Teil ist der erste Stator mit Einstrom, der mittlere Teil ist der Rotor und der hintere Teil ist der zweite Stator mit Ausstrom. Die Grenzen an den Seiten stellen Shroud und Hub dar. Oben und unten herrschen periodische Randbedingungen. Die Statoren sind jeweils durch ein Interface mit dem Rotor verbunden. Die Anzahl an Blades in Stator und Rotor sind der folgenden Tabelle \ref{tab:aachenabmessungen} zu entnehmen.
+\begin{table}[H]
+\centering
+\label{tab:aachenabmessungen}
+\caption{Bladeanzahl im Stator und Rotor}
+\begin{tabular}{ c| c}
+Anzahl Blades im Stator&Anzahl Blades im Rotor\\
+\hline
+36&41\\
+\end{tabular}
+\end{table}
+Im folgenden Abschnitt wird der gewählte Betriebspunkt näher beschirieben.
+%________________________________________________________
+\section{Betriebspunkt}
+\label{subsec:aachensetup}
+Als Betriebspunkt wurden die Randbedingungen der Analyse der Aachen-Turbine von TO DO übernommen. Diese sind der folgenden Tabelle \ref{tab:aachensetup} zu entnehmen. Im 
+\begin{table}[H]
+\centering
+\caption{tab:aachensetup}
+\begin{tabular}{ c| c| c| c}
+$T_{t_{Inlet}}$&$p_{t_{Inlet}}$&$Massenstrom$&$\omega_{Rotor}$\\
+\hline
+305&152.000&2&3500\\
+\end{tabular}
+\end{table}
+In den verschiedenen Aufgabenteilen wurden die Eintrittsbedingungen jedoch auch verändert, um zum Beispiel den Einfluss inhomogener Eintrittsbedingungen oder höherer Temperaturen zu untersuchen.
+
+\input{strukturiert}
+\input{unstrukturiert}
+\input{wirkungsgradeaachenturbine}
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "main"
+%%% End: 
+
+
