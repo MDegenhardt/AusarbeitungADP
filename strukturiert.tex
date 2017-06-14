@@ -11,19 +11,19 @@ Da die uns zur Verfügung stehende Vorlage der Aachen-Turbine die 1,5 Stufen zus
 Zur Bestimmung der Gitterauflösung im Spalt des Rotors wurde zudem die Anzahl der Zellen im Spalt variiert. Es stellte sich heraus, dass im Vergleich zum ursprünglichen Gitter mehr Zellen hinzugefügt werden mussten, da die Auflösung nicht fein genug war und man Änderungen im Vergleich zur gröberen Auflösung sah.  In den Abbildungen \ref{effSpalt1} und \ref{effSpalt15} ist die Gitterstudie für den Spalt mit 1 und 1,5 Stufen dargestellt. \todo welches Gitter ausgewählt, 3.? \todo Zellen im Spalt
 
 
-\begin{figure}[htbp]
-	\centering
-	\label{effSpalt1}
-	\includegraphics[width=0.7\textwidth]{efficiencySpalt1Stufe.eps}
-	\caption{Gitterstudie des Spalts für eine Stufe}
-\end{figure}
-
-\begin{figure}[htbp]
-	\centering
-	\label{effSpalt15}
-	\includegraphics[width=0.7\textwidth]{efficiencySpalt15Stufen.eps}
-	\caption{Gitterstudie des Spalts für 1,5 Stufen}
-\end{figure}
+%\begin{figure}[htbp]
+%	\centering
+%	\label{effSpalt1}
+%	\includegraphics[width=0.7\textwidth]{efficiencySpalt1Stufe.eps}
+%	\caption{Gitterstudie des Spalts für eine Stufe}
+%\end{figure}
+%
+%\begin{figure}[htbp]
+%	\centering
+%	\label{effSpalt15}
+%	\includegraphics[width=0.7\textwidth]{efficiencySpalt15Stufen.eps}
+%	\caption{Gitterstudie des Spalts für 1,5 Stufen}
+%\end{figure}
 
 \subsection{Einstellen der Grenzschichtdicke}
 Außerdem musste noch die Grenzschichtdicke, bzw. das y-plus eingestellt werden. Die Strömung wurde bis in die viskose Unterschicht aufgelöst, sodass die Auflösung in Wandnähe im Bereich der kleinsten Wirbel liegt. Das Verhältnis der Grenzschichtdicke zu den kleinsten Wirbeln sollte kleiner als 1 sein. \todo Formel einfügen. Um das korrekte y-plus zu bestimmen, haben wir die Werte in AutoGrid für den Wandabstand sowohl auf dem Schaufelrand im B2B-Layer, als auch an Hub und Shroud variiert.  Anschließend haben wir eine Simulation in CFX durchgeführt und dann die Verteilung des y-plus-Wertes über die Schaufel hinweg visualisiert und ausgewertet. Schließlich kamen wir zu dem Ergebnis, dass die optimale Grenzschichtdicke für den Rotor bei $2e-6$ im Flowpath an Hub und Shroud und bei $1.5e-6$ am Blade liegt. Die kompletten Werte sind in Tabelle \ref{cellWidths} zu sehen. Über die komplette Schaufel betrachtet liegen die y-plus-Werte in einem Bereich von $0.3 \leq y^+ \leq 3$ nahezu überall. Da man nur wenige Stellschrauben zur Beeinflussung dieses Wertes in AutoGrid hat, ist dieser Wertebereich zufriedenstellend, zumal die Mehrheit der Werte im Bereich von $0.7 \leq y^+ \leq 1.2$  liegt, wie in Abb. \ref{imgYplusWerte} zu sehen ist. 
