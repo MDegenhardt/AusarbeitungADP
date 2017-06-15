@@ -75,7 +75,12 @@ Desweiteren wurde der Einfluss der Einstromrandbedingung in Bezug auf die Mixing
 Anstatt nur stationär mit einer Mixing Plane wurde die Berechnung auch vollständig instationär mit einer Sliding Plane durchgeführt. Die Ergebnisse dieser Berechnungen werden im nächsten Abschnitt vorgestellt.
 \subsection{Einfluss auf die Strömungsgrößen}
 \label{subsec:kanalrandbedingungen}
-Zur Untersuchung des Stator-Rotor Interface wurden die Strömungsgrößen vor und nach dem Interface miteinander verglichen. Dabei ergibt sich folgende Tabelle \ref{tab:kanalbedingungen} mit den Strömungsgrößen Massenstrom $\dot m$, Totaldruck $p_t$ und Totaltemperatur $T_t$.
+Zur Untersuchung des Stator-Rotor Interface wurden die Strömungsgrößen vor und nach dem Interface miteinander verglichen, indem die Differenz nach
+\begin{equation}
+\label{eq:tdifferenz}
+\Delta T_{t} = T_{t,2} - T_{t,1}
+\end{equation}
+berechnet, wobei $T_{t,1}$ die Totaltemperatur vor dem Interface und $T_{t,2}$ die Totaltemperatur nach dem Interface ist. Dabei ergibt sich folgende Tabelle \ref{tab:kanalbedingungen} mit den Strömungsgrößen Massenstrom $\dot m$, Totaldruck $p_t$ und Totaltemperatur $T_t$.
 \begin{table}[H]
 \centering
 \caption{Einfluss der Eintrittsrandbedingungen}
@@ -97,10 +102,11 @@ Instationär&+1,873e-07&-0,604&-2,466e-04\\%&+0\% \\
 \end{tabular}
 \label{tab:kanalbedingungen}
 \end{table}
+Es ist zu sehen, dass die Massenströme vor und nach dem Stator-Rotor Interface für alle Einstrombedingungen annähernd gleich groß sind. Auch der Totaldruck unterscheidet sich um bis zu maximal $\Delta P_{t_{max}} \approx 93 Pa$ und ist somit im Vergleich zu den vorherrschenden Totaldrücken $\frac{\Delta p_t}{p_t} \approx 10^{-4}$ klein. \newline Die Totaltemperatur ändert sich bei homogenen Temperaturrandbedingungen sowohl für schräge Einströmungsrandbedingungen als auch bei feinerem Gitter im Rotor kaum ($\Delta T_t < 0,05 K$). \newline
+Bei inhomogenen Temperaturrandbedingungen unterscheidet sich die Totaltemperatur vor und nach dem Interface um ungefähr $\Delta T_t \approx 0,8K$. Hier ist der Unterschied zum homogenen Temperaturfeld wesentlich größer. Insbesondere bei zusätzlichen Dralleintrittsbedingungen  ergeben sich Totaltemperaturdifferenzen von bis zu $\Delta T_t \approx 1,8K$. Bei Dralleintrittsbedingungen mit inhomogenen Randbedingungen\newline
 %TO DO
 Der Einfluss auf den Wirkungsgrad $\Delta \eta$ wurde durch Vergleich mit Ergebnissen der Aachen-Turbine mit gleichem Betriebspunkt abgeschätzt. 
-
-Es ist zu sehen, dass die Massenströme vor und nach dem Stator-Rotor Interface für alle Einstrombedingungen annähernd gleich groß sind. Auch der Totaldruck unterscheidet sich um bis zu maximal 100 $Pa$ und ist somit im Vergleich zu den vorherrschenden Totaldrücken $\frac{\Delta p_t}{p_t} \approx 10^{-4}$ klein. \newline Die Totaltemperatur ändert sich bei homogenen Temperaturrandbedingungen sowohl für schräge Einströmungsrandbedingungen als auch bei feinerem Gitter im Rotor kaum ($\Delta T_t < 0,05 K$). Bei inhomogenen Randbedingungen und insbesondere bei zusätzlichen Dralleintrittsbedingungen hingegen ergeben sich Totaltemperaturdifferenzen von bis zu $\Delta T_t \approx 1,8K$. Diese führen beim Vergleich mit der Aachen-Turbine zu Unterschieden im Wirkungsgrad von bis zu $+2\%$.\newline
+%ZUM FAZIT
 Somit ist die Berücksichtung des Einflusses der Mixing Plane für die Wirkungsgradbestimmung unerlässlich, besonders wenn inhomogene Temperaturfelder an dem Interface auftreten. Außerdem ist hier zu erwähnen, dass in diesem Testfall nur der Einfluss eines einzelnen Interfaces untersucht wurde. Bei einer Simulationen von mehreren Turbinenstufen und somit der Verwendung von mehreren Interfaces summiert sich der Fehler am Interface.
 
 %%% Local Variables: 
