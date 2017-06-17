@@ -10,7 +10,7 @@ Dieses Modell hat seine Vorteile bei großen Schwankungen der Strömungsgrößen
 Eine weitere Untergruppe der \textit{General Connection} in CFX ist das Stage- oder Mixing Plane-Interface, welches für die Erstellung des in dieser Arbeit verwendeten Setups eingesetzt wird. Hierbei werden die Strömungsgrößen an der Verbindungsstelle über den Umfang gemittelt.
 Durch die Mittelung der Strömungsgrößen am Interface treten Vermischungsverluste auf. Laut ANSYS sind die hierbei entstehenden Verluste äquivalent zu den physikalischen Vermischungseffekten der zwischen Stator und Rotor und eines somit entstehenden Geschwindigkeitsprofils in entgegen der Strömungsrichtung.\\
 %Quelle: \url{
-TODO ${https://www.sharcnet.ca/Software/Ansys/17.0/en-us/help/cfx_mod/CACDIGEH.html} $- 12.06.2017 TODO
+TODO ${https://www.sharcnet.ca/Software/Ansys/17.0/en-us/help/cfx_mod/CACDIGEH.html} $- 12.06.2017 %TODO
 %_____________________________________________________________________
 \section{Rohrauschnitt}
 \label{sec:kanalgeo}
@@ -80,7 +80,7 @@ Zur Untersuchung des Stator-Rotor Interface wurden die Strömungsgrößen vor un
 \label{eq:tdifferenz}
 \Delta T_{t} = T_{t,2} - T_{t,1}
 \end{equation}
-berechnet, wobei $T_{t,1}$ die Totaltemperatur vor dem Interface und $T_{t,2}$ die Totaltemperatur nach dem Interface ist. Dabei ergibt sich folgende Tabelle \ref{tab:kanalbedingungen} mit den Strömungsgrößen Massenstrom $\dot m$, Totaldruck $p_t$ und Totaltemperatur $T_t$.
+berechnet wurde, wobei $T_{t,1}$ die Totaltemperatur vor dem Interface und $T_{t,2}$ die Totaltemperatur nach dem Interface ist. Dabei ergibt sich folgende Tabelle \ref{tab:kanalbedingungen} mit den Strömungsgrößen Massenstrom $\dot m$, Totaldruck $p_t$ und Totaltemperatur $T_t$.
 \begin{table}[H]
 \centering
 \caption{Einfluss der Eintrittsrandbedingungen}
@@ -102,12 +102,34 @@ Instationär&+1,873e-07&-0,604&-2,466e-04\\%&+0\% \\
 \end{tabular}
 \label{tab:kanalbedingungen}
 \end{table}
-Es ist zu sehen, dass die Massenströme vor und nach dem Stator-Rotor Interface für alle Einstrombedingungen annähernd gleich groß sind. Auch der Totaldruck unterscheidet sich um bis zu maximal $\Delta P_{t_{max}} \approx 93 Pa$ und ist somit im Vergleich zu den vorherrschenden Totaldrücken $\frac{\Delta p_t}{p_t} \approx 10^{-4}$ klein. \newline Die Totaltemperatur ändert sich bei homogenen Temperaturrandbedingungen sowohl für schräge Einströmungsrandbedingungen als auch bei feinerem Gitter im Rotor kaum ($\Delta T_t < 0,05 K$). \newline
-Bei inhomogenen Temperaturrandbedingungen unterscheidet sich die Totaltemperatur vor und nach dem Interface um ungefähr $\Delta T_t \approx 0,8K$. Hier ist der Unterschied zum homogenen Temperaturfeld wesentlich größer. Insbesondere bei zusätzlichen Dralleintrittsbedingungen  ergeben sich Totaltemperaturdifferenzen von bis zu $\Delta T_t \approx 1,8K$. Bei Dralleintrittsbedingungen mit inhomogenen Randbedingungen\newline
+Es ist zu sehen, dass die Massenströme vor und nach dem Stator-Rotor Interface für alle Einstrombedingungen annähernd gleich groß sind. Der Totaldruck sinkt um bis zu maximal $\Delta P_{t_{max}} \approx 93 Pa$ und somit ist der Totaldruckverlust im Vergleich zu den vorherrschenden Totaldrücken $\frac{\Delta p_t}{p_t} \approx 10^{-4}$ klein. \newline Die Totaltemperatur ändert sich bei homogenen Temperaturrandbedingungen sowohl für schräge Einströmungsrandbedingungen als auch bei feinerem Gitter im Rotor kaum ($\Delta T_t < 0,05 K$). \newline
+Bei inhomogenen Temperaturrandbedingungen unterscheidet sich die Totaltemperatur vor und nach dem Interface um ungefähr $\Delta T_t \approx 0,8K$. Hier ist der Unterschied von $T_t$ im Vergleich zum vorher homogenen Temperaturfeld wesentlich größer. Insbesondere bei zusätzlichen Dralleintrittsbedingungen ergeben sich Totaltemperaturdifferenzen von bis zu $\Delta T_t \approx 1,8K$. Bei Dralleintrittsbedingungen mit inhomogenen Randbedingungen sind somit die Abweichung der Totaltemperatur ungefähr doppelt so hoch wie bei keinen Dralleintrittsrandbedingungen (und nur inhomogenen Temperaturfeld).\\
+Die Untersuchung der Mixing Plane erfolgte mit einer vereinfachten Turbine ohne Schaufeln. Bei diesem Fall wird im Rotor ohne Schaufeln keine Leistung erzeugt, sondern der Strömung Energie durch Rotation und Reibung zugeführt. Dies hat zur Folge, dass bei diesem Problemgebiet direkt keine Aussagen über den Wirkungsgrad wie bei einer Turbine getroffen werden kann. Um dennoch zumindestens eine grobe Abschätzung der Veränderung des Wirkungsgrades durch die Mixing Plane zu erhalten, wurden die Ergebnisse für $\Delta p_t$ und $\Delta T_t$ für diese Geometrie auf die Aachen Turbine übertragen. Dabei wurde die Aachen Turbine mit dem gleichen Betriebspunkt wie die vereinfachte Rohrströmung gerechnet und die Differenzen an den beiden Interfaces Stator1-Rotor und Rotor-Stator2 betrachtet. Diese Differenzen wurden dann bei der Wirkungsgradberechnung eliminiert, um einen korrigierten Wirkungsgrad zu berechnen (frei von den Differenzen an der Mixing Plane). Auf diesen korrigierten Wirkungsgrad wurden dann die Differenzen, die sich bei der vereinfachten Rohrströmung ergeben haben, wieder aufaddiert, unter der Annahme, dass sich die Aachen Turbine bei unterschiedlichen Eintrittsbedingungen ähnlich wie die Rohrströmung verhält. Damit ergaben sich folgende Abweichungen des Wirkungsgrads $\Delta \eta$ durch die Mixing Plane:
+\begin{table}[H]
+\centering
+\caption{Abschätzung des Einflusses der MP auf den Wirkungsgrad}
+\begin{tabular}{ c| c}
+Einstromrandbedingung&$\Delta \eta$\\
+\toprule
+Referenzlösung&-0,264\%\\
+feineres Gitter im Rotor&-0,274\%\\
+schräge Einströmung&-0,190\% \\
+inhomogene TemperaturRB&-2,775\% \\
+DralleintrittsRB A&-6,345\% \\
+DralleintrittsRB B&-5,884\% \\
+DralleintrittsRB C&-6,343\% \\
+DralleintrittsRB D&-5,629\% \\
+DralleintrittsRB E&-5,599\% \\
+DralleintrittsRB F&-5,808\% \\
+\midrule
+Instationär&$-8 \cdot 10^{-4}\%$ \\
+\end{tabular}
+\label{tab:kanalwg}
+\end{table}
+Hierbei ist jedoch anzumerken, dass aufgrund der vielen Annahmen diese Abschätzung nicht als allgemeine Aussage für die Wirkungsgradbestimmung zu sehen ist, sondern nur eine grobe Abschätzung der Größenordnung des Einflusses der Mixing Plane darstellt.
 %TO DO
-Der Einfluss auf den Wirkungsgrad $\Delta \eta$ wurde durch Vergleich mit Ergebnissen der Aachen-Turbine mit gleichem Betriebspunkt abgeschätzt. 
-%ZUM FAZIT
-Somit ist die Berücksichtung des Einflusses der Mixing Plane für die Wirkungsgradbestimmung unerlässlich, besonders wenn inhomogene Temperaturfelder an dem Interface auftreten. Außerdem ist hier zu erwähnen, dass in diesem Testfall nur der Einfluss eines einzelnen Interfaces untersucht wurde. Bei einer Simulationen von mehreren Turbinenstufen und somit der Verwendung von mehreren Interfaces summiert sich der Fehler am Interface.
+FAZIT FAZIT
+Die Berücksichtung des Einflusses der Mixing Plane für die Wirkungsgradbestimmung ist unerlässlich, sobald inhomogene Temperaturfelder an dem Interface auftreten. Hier sollten die Domains instationär mit einer Sliding Plane verbunden werden, um die Verfälschung der Strömung durch Mittelung an der Mixing Plane zu vermeiden. Außerdem ist hier zu erwähnen, dass in diesem Testfall nur der Einfluss eines einzelnen Interfaces untersucht wurde. Bei einer Simulationen von mehreren Turbinenstufen und somit der Verwendung von mehreren Interfaces summiert sich der Fehler am Interface.
 
 %%% Local Variables: 
 %%% mode: latex
