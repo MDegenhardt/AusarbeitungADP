@@ -9,7 +9,7 @@ Zur Analyse der verschiedenen Wirkungsgraddefinitionen wurde eine sogenannte Aac
 	\includegraphics[width=0.7\textwidth]{AachenTurbine_trans.png}
 	\caption{Aachen-Turbine}
 \end{figure} 
-Die verwendete Geometrie basiert auf der Aachen-Turbine, die auch in den Untersuchungen von TO DO verwendet wurde. Es wurden dabei nur anderthalb Stufen berechnet, um den Rechenaufwand der Simulationen gering zu halten und der Vergleich der Wirkungsdefinitionen auch für diesen Aufbau möglich ist. Die Geometrie der Aachen-Turbine mit Gitter ist in der Abbildung \ref{fig:aachengebiet} zu sehen. TODOTODOTODO
+Die verwendete Geometrie basiert auf der Aachen-Turbine, die auch in den Untersuchungen von \textcolor{red}{\textbf{(Quelle: Unsteady Flow Investigations - Jixian Yao, Roger L. Davis, Juan J. Alonso and Antony Jameson)}} verwendet wurde. Es wurden dabei nur anderthalb Stufen berechnet, um den Rechenaufwand der Simulationen gering zu halten und der Vergleich der Wirkungsdefinitionen auch für diesen Aufbau möglich ist. Die Geometrie der Aachen-Turbine mit Gitter ist in der Abbildung \ref{fig:aachengebiet} zu sehen. TODOTODOTODO
 \begin{figure}[H]
 \includegraphics[width=\textwidth]{aachenmitgitter.png}
 \caption{Eine dreidimensionale Ansicht der Aachen-Turbine mit Gitter.}
@@ -19,9 +19,9 @@ Die Aachen-Turbine besteht aus zwei Statoren und einem Rotor. Der vordere Teil i
 \begin{table}[H]
 \centering
 \label{tab:aachenabmessungen}
-\caption{Bladeanzahl im Stator und Rotor}
+\caption{Schaufelzahlen in Stator und Rotor}
 \begin{tabular}{ c| c}
-Anzahl Blades im Stator&Anzahl Blades im Rotor\\
+\# Schaufeln in Stator&\# Schaufeln in Rotor\\
 \hline
 36&41\\
 \end{tabular}
@@ -30,14 +30,15 @@ Im folgenden Abschnitt wird der gewählte Betriebspunkt näher beschirieben.
 %________________________________________________________
 \section{Betriebspunkt}
 \label{subsec:aachensetup}
-Als Betriebspunkt wurden die Randbedingungen der Analyse der Aachen-Turbine von TO DO übernommen. Diese sind der folgenden Tabelle \ref{tab:aachensetup} zu entnehmen. Im 
+Als Betriebspunkt wurden die Randbedingungen der Analyse der Aachen-Turbine von \textcolor{red}{\textbf{(Quelle: Unsteady Flow Investigations - Jixian Yao, Roger L. Davis, Juan J. Alonso and Antony Jameson)}} übernommen. Diese sind der folgenden Tabelle \ref{tab:aachensetup} zu entnehmen. Im 
 \begin{table}[H]
 \centering
-\caption{tab:aachensetup}
+\label{tab:aachensetup}
+\caption{Betriebspunkt}
 \begin{tabular}{ c| c| c| c}
-$T_{t_{Inlet}}$&$p_{t_{Inlet}}$&$Massenstrom$&$\omega_{Rotor}$\\
+$T_{t_{Inlet}}$&$p_{t_{Inlet}}$&$Massenstrom$&$n_{Rotor}$\\
 \hline
-305&152.000&2&3500\\
+$305 \, K$&$152.000 \, Pa$&$2 \, \frac{kg}{s}$&$3500 \, \frac{rev}{min}$\\
 \end{tabular}
 \end{table}
 In den verschiedenen Aufgabenteilen wurden die Eintrittsbedingungen jedoch auch verändert, um zum Beispiel den Einfluss inhomogener Eintrittsbedingungen oder höherer Temperaturen zu untersuchen.
