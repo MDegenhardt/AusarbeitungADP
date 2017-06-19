@@ -38,18 +38,24 @@ Um den Betriebspunkt für die Simulationen dieser Arbeit festzulegen wurden als 
 übernommen. Diese sind der folgenden Tabelle \ref{tab:aachensetup} zu entnehmen.
 \begin{table}[H]
 \centering
-\label{tab:aachensetup}
-\caption{Betriebspunkt}
+\caption{Betriebspunkt} \label{tab:aachensetup}
 \begin{tabular}{ c| c| c| c}
 $T_{t_{Inlet}}$&$p_{t_{Inlet}}$&$Massenstrom$&$n_{Rotor}$\\
 \hline
 $305 \, K$&$\approx152.000 \, Pa$&$7 \, \frac{kg}{s}$&$3500 \, \frac{rev}{min}$\\
 \end{tabular}
 \end{table}
-Der Totaldruck am Inlet wurde als Druckprofil entsprechend den Daten der Arbeit \glqq Unsteady Flow Investigations in an
+Der Totaldruck am Inlet wurde als Druckprofil, siehe Abbildung \ref{fig:ptinlet}, entsprechend den Daten der Arbeit \glqq Unsteady Flow Investigations in an
 Axial Turbine Using the Massively
-Parallel Flow Solver TFLO\grqq \cite[p. 4]{ufi2001YaoDavis} angenommen
+Parallel Flow Solver TFLO\grqq \, \cite[p. 4]{ufi2001YaoDavis} angenommen
 In den verschiedenen Aufgabenteilen wurden die Eintrittsbedingungen jedoch auch verändert, um zum Beispiel den Einfluss inhomogener Eintrittsbedingungen oder höherer Temperaturen zu untersuchen.
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.7\textwidth]{PtInlet.eps}
+	\caption{Totaldruck Profil Inlet} \label{fig:ptinlet}
+\end{figure}
+
 
 \input{strukturiert}
 \input{unstrukturiert}
