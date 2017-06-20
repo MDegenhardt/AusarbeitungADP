@@ -10,16 +10,10 @@ Dieses Modell hat seine Vorteile bei großen Schwankungen der Strömungsgrößen
 Eine weitere Untergruppe der \textit{General Connection} in CFX ist das Stage- oder Mixing Plane-Interface, welches für die Erstellung des in dieser Arbeit verwendeten Setups eingesetzt wird. Hierbei werden die Strömungsgrößen an der Verbindungsstelle über den Umfang gemittelt.
 Durch die Mittelung der Strömungsgrößen am Interface treten Vermischungsverluste auf. Laut ANSYS sind die hierbei entstehenden Verluste äquivalent zu den physikalischen Vermischungseffekten der zwischen Stator und Rotor und eines somit entstehenden Geschwindigkeitsprofils in entgegen der Strömungsrichtung. \cite{Sharcnet1}
 
-%Quelle: \url{
-%<<<<<<< HEAD
-%TODO %${https://www.sharcnet.ca/Software/Ansys/17.0/en-us/help/cfx_mod/CACDIGEH.html} %$- 12.06.2017 %TODO
-%=======
-%\textcolor{red}{TODO %${https://www.sharcnet.ca/Software/Ansys/17.0/en-us/help/cfx_mod/CACDIGEH.html} %$- 12.06.2017 TODO}
-%>>>>>>> f3c40cd8607ef731dd159d84270213c9c754ef68
 %_____________________________________________________________________
 \section{Rohrauschnitt}
 \label{sec:kanalgeo}
-Anstelle der Aachen-Turbine wurde für die Analyse des Stator-Rotor Interface ein Rohrausschnitt, geteilt in Stator und Rotor, berechnet, um den Einfluss des Interfaces auf die Strömungsgrößen in Hinblick auf die Wirkungsgradberechnung zu testen. Dabei wurden die Eintrittsbedingungen verändert und das Verhalten der Mixing-Plane unter unterschiedlichen Anströmbedingungen untersucht. In den folgendem Abschnitt wird zunächst das Rechengebiet näher beschrieben.
+Anstelle der Aachen-Turbine wird für die Analyse des Stator-Rotor Interfaces ein Rohrausschnitt, geteilt in Stator und Rotor, berechnet um den Einfluss des Interfaces auf die Strömungsgrößen in Hinblick auf die Wirkungsgradberechnung zu testen. Dabei werden die Eintrittsbedingungen verändert und das Verhalten der Mixing-Plane unter unterschiedlichen Einströmbedingungen untersucht. In dem folgenden Abschnitt wird zunächst das Rechengebiet näher beschrieben.
 %________________________________________________________
 \subsection{Problemgebiet}
 \label{subsec:kanalproblemgebiet}
@@ -29,7 +23,7 @@ Die Geometrie des Rohrausschnitts mit Gitter ist in der Abbildung \ref{fig:kanal
 \caption{Eine dreidimensionale Ansicht der vereinfachten Aachen-Turbine mit Gitter.}
 \label{fig:kanalgebiet}
 \end{figure}
-Die vereinfachte Turbine besteht aus einem Stator und einem Rotor. An der Vorderseite befindet sich der Einstrom, an den Seiten jeweils periodische Randbedingungen, an der Rückseite ist der Ausstrom. Die Grenzen an der Ober- und Unterseite stellen Shroud und Hub dar und werden als Wandrandbedingungen repräsentiert. Stator und Rotor sind mit einem Interface verbunden. Das Verhältnis der Abmessungen dieses Rohrausschnitts entspricht den Größenverhältnissen der Aachen-Turbine und sind der Tabelle \ref{tab:kanalabmessungen} zu entnehmen.
+Die vereinfachte Turbine besteht aus einem Stator und einem Rotor. An der Vorderseite befindet sich der Einstrom, an den Seiten jeweils periodische Randbedingungen, an der Rückseite ist der Ausstrom. Die Grenzen an der Ober- und Unterseite stellen Shroud und Hub dar, repräsentieren somit Wandrandbedingungen. Stator und Rotor sind mit einem Interface verbunden. Das Verhältnis der Abmessungen dieses Rohrausschnitts entspricht den Größenverhältnissen der Aachen-Turbine und sind der Tabelle \ref{tab:kanalabmessungen} zu entnehmen.
 \begin{table}[H]
 \centering
 \label{tab:kanalabmessungen}
@@ -40,11 +34,11 @@ Die vereinfachte Turbine besteht aus einem Stator und einem Rotor. An der Vorder
 $300mm$&$240mm$&$160mm$&$45^\circ$\\
 \end{tabular}
 \end{table}
-mit dem Außendurchmesser $d_a$, dem Innendurchmesser $d_i$, der Länge in Axialrichtung $L_x$ und dem Ausschnittswinkel $\alpha$.
+Hierbei sind $d_a$ Außendurchmesser, $d_i$ Innendurchmesser $d_i$, $L_x$ die Länge in Axialrichtung  und $\alpha$ der Ausschnittswinkel.
 %________________________________________________________
 \subsection{Gitterstudie}
 \label{subsec:kanalgitterstudie}
-Nach Festlegen der Geometrie wurde ein CAD-Modell und ein Gitter mit einem $y^+ \approx 1$ erstellt. Darauf folgte eine Gitterstudie , um die Unabhängigkeit der Lösung von der Gitterdiskretition sicherzustellen. Dabei wurde das Rechengebiet auf immer feiner werdenden Gittern berechnet, bis sich die relevanten Größen nicht mehr verändert haben. In der folgenden Tabelle \ref{tab:kanalgitter} werden die Gitterparameter des Gitters gezeigt, die aus der Gitterstudie ermittelt und für die Analyse verwendet wurden. 
+Nach Festlegen der Geometrie wird ein CAD-Modell und ein Gitter mit einem $y^+ \approx 1$ erstellt. Darauf folgte eine Gitterstudie, um die Unabhängigkeit der Lösung zur Gitterdiskretisierung sicherzustellen. Dabei wird das Modell auf immer feiner werdenden Gittern berechnet, bis sich die relevanten Größen nicht mehr verändern. In der folgenden Tabelle \ref{tab:kanalgitter} werden die Gitterparameter des Gitters gezeigt, die aus der Gitterstudie ermittelt und für die Analyse verwendet werden. 
 \begin{table}[H]
 \centering
 \caption{Gitterparameter des Kanals}
@@ -56,7 +50,7 @@ $N_x$&$N_r$&$N_\phi$&Gesamtanzahl Knoten&Gesamtanzahl KV\\
 \label{tab:kanalgitter}
 \end{table}
 Dabei sind $N_x$, $N_r$ und $N_\phi$ die Anzahl an Knoten in die verschiedenen Raumrichtungen in Zylinderkoordinaten.\newline
-Anschließend wurden für dieses Gitter Strömungssimulationen mit unterschiedlichen Eintrittsrandbedingungen und Veränderungen des Stator-Rotor Interfaces durchgeführt, die in dem folgendem Abschnitt beschrieben werden.
+Anschließend werden für dieses Gitter Strömungssimulationen mit unterschiedlichen Eintrittsrandbedingungen und Veränderungen des Stator-Rotor Interfaces durchgeführt, die in dem folgendem Abschnitt beschrieben werden.
 
 %_____________________________________________________________________________
 \section{Einfluss des Stator-Rotor Interface auf den Wirkungsgrad}
@@ -64,8 +58,8 @@ Anschließend wurden für dieses Gitter Strömungssimulationen mit unterschiedli
 In diesem Abschnitt werden die unterschiedlichen verwendeten Eintrittsrandbedingungen näher erläutert und dann die Ergebnisse der verschiedenen Simulationen vorgestellt.
 \subsection{Verwendete Eintrittsrandbedingungen}
 \label{subsec:kanalrandbedingungen}
-Bei dem Stator-Rotor Interface werden die Werte an den Knoten vor dem Interface nach Mittelung und Interpolation auf die Knoten nach dem Interface übertragen. Bei gleichem Gitter für Stator und Rotor können diese direkt zugeordnet werden. Deswegen wurde für einen Testfall das Gitter im Rotor verfeinert, sodass die Zuordnung der Knoten interpolativ erfolgen muss.\newline
-Desweiteren wurde der Einfluss der Einstromrandbedingung in Bezug auf die Mixing Plane ermittelt. Dabei wurde eine schräge Einströmung (Abbildung \ref{fig:randbedingungen}\subref{subfig-2:randbedingungen}), eine inhomogene Temperaturverteilung mit maximaler Temperatur in Rechengebietsmitte (Abbildung \ref{fig:randbedingungen}\subref{subfig-3:randbedingungen}/\subref{subfig-4:randbedingungen}) und schließlich zusätzliche Dralleintrittsrandbedingungen mit unterschiedlicher Drallkernposition (Abbildung \ref{fig:randbedingungen}\subref{subfig-5:randbedingungen}/\subref{subfig-6:randbedingungen}) vorgegeben.
+Bei dem Stator-Rotor Interface werden die Werte an den Knoten vor dem Interface nach Mittelung und Interpolation auf die Knoten nach dem Interface übertragen. Bei gleichem Gitter für Stator und Rotor können diese direkt zugeordnet werden. Deswegen wird für einen Testfall das Gitter im Rotor verfeinert, sodass die Zuordnung der Knoten interpoliert erfolgen muss.\newline
+Des Weiteren wird der Einfluss der Einströmrandbedingung in Bezug auf die Mixing Plane ermittelt. Dabei wird eine schräge Einströmung (Abbildung \ref{fig:randbedingungen}\subref{subfig-2:randbedingungen}), eine inhomogene Temperaturverteilung mit maximaler Temperatur in Rechengebietsmitte (Abbildung \ref{fig:randbedingungen}\subref{subfig-3:randbedingungen}/\subref{subfig-4:randbedingungen}) und schließlich zusätzliche Dralleintrittsrandbedingungen mit unterschiedlicher Drallkernposition (Abbildung \ref{fig:randbedingungen}\subref{subfig-5:randbedingungen}/\subref{subfig-6:randbedingungen}) vorgegeben.
 \begin{figure}[htbp]
 \centering
 %\subfigure[Feineres Gitter im Rotor]{\includegraphics[width=0.45\textwidth]{bilder/feinererrotor.png}\label{subfig-1:randbedingungen}}
@@ -80,12 +74,12 @@ Desweiteren wurde der Einfluss der Einstromrandbedingung in Bezug auf die Mixing
 Anstatt nur stationär mit einer Mixing Plane wurde die Berechnung auch vollständig instationär mit einer Sliding Plane durchgeführt. Die Ergebnisse dieser Berechnungen werden im nächsten Abschnitt vorgestellt.
 \subsection{Einfluss auf die Strömungsgrößen}
 \label{subsec:kanalrandbedingungen}
-Zur Untersuchung des Stator-Rotor Interface wurden die Strömungsgrößen vor und nach dem Interface miteinander verglichen, indem die Differenz nach
+Zur Untersuchung des Stator-Rotor Interface sollen die Strömungsgrößen vor und nach dem Interface miteinander verglichen werden. Hierfür werden die Differenz nach
 \begin{equation}
 \label{eq:tdifferenz}
 \Delta T_{t} = T_{t,2} - T_{t,1}
 \end{equation}
-berechnet wurde, wobei $T_{t,1}$ die Totaltemperatur vor dem Interface und $T_{t,2}$ die Totaltemperatur nach dem Interface ist. Dabei ergibt sich folgende Tabelle \ref{tab:kanalbedingungen} mit den Strömungsgrößen Massenstrom $\dot m$, Totaldruck $p_t$ und Totaltemperatur $T_t$.
+berechnet, wobei $T_{t,1}$ die Totaltemperatur vor dem Interface und $T_{t,2}$ die Totaltemperatur nach dem Interface ist. Dabei ergibt sich folgende Tabelle \ref{tab:kanalbedingungen} mit den Strömungsgrößen Massenstrom $\dot m$, Totaldruck $p_t$ und Totaltemperatur $T_t$.
 \begin{table}[H]
 \centering
 \caption{Einfluss der Eintrittsrandbedingungen}
@@ -107,9 +101,9 @@ Instationär&+1,873e-07&-0,604&-2,466e-04\\%&+0\% \\
 \end{tabular}
 \label{tab:kanalbedingungen}
 \end{table}
-Es ist zu sehen, dass die Massenströme vor und nach dem Stator-Rotor Interface für alle Einstrombedingungen annähernd gleich groß sind. Der Totaldruck sinkt um bis zu maximal $\Delta P_{t_{max}} \approx 93 Pa$ und somit ist der Totaldruckverlust im Vergleich zu den vorherrschenden Totaldrücken $\frac{\Delta p_t}{p_t} \approx 10^{-4}$ klein. \newline Die Totaltemperatur ändert sich bei homogenen Temperaturrandbedingungen sowohl für schräge Einströmungsrandbedingungen als auch bei feinerem Gitter im Rotor kaum ($\Delta T_t < 0,05 K$). \newline
-Bei inhomogenen Temperaturrandbedingungen unterscheidet sich die Totaltemperatur vor und nach dem Interface um ungefähr $\Delta T_t \approx 0,8K$. Hier ist der Unterschied von $T_t$ im Vergleich zum vorher homogenen Temperaturfeld wesentlich größer. Insbesondere bei zusätzlichen Dralleintrittsbedingungen ergeben sich Totaltemperaturdifferenzen von bis zu $\Delta T_t \approx 1,8K$. Bei Dralleintrittsbedingungen mit inhomogenen Randbedingungen sind somit die Abweichung der Totaltemperatur ungefähr doppelt so hoch wie bei keinen Dralleintrittsrandbedingungen (und nur inhomogenen Temperaturfeld).\\
-Die Untersuchung der Mixing Plane erfolgte mit einer vereinfachten Turbine ohne Schaufeln. Bei diesem Fall wird im Rotor ohne Schaufeln keine Leistung erzeugt, sondern der Strömung Energie durch Rotation und Reibung zugeführt. Dies hat zur Folge, dass bei diesem Problemgebiet direkt keine Aussagen über den Wirkungsgrad wie bei einer Turbine getroffen werden kann. Um dennoch zumindestens eine grobe Abschätzung der Veränderung des Wirkungsgrades durch die Mixing Plane zu erhalten, wurden die Ergebnisse für $\Delta p_t$ und $\Delta T_t$ für diese Geometrie auf die Aachen Turbine übertragen. Dabei wurde die Aachen Turbine mit dem gleichen Betriebspunkt wie die vereinfachte Rohrströmung gerechnet und die Differenzen an den beiden Interfaces Stator1-Rotor und Rotor-Stator2 betrachtet. Diese Differenzen wurden dann bei der Wirkungsgradberechnung eliminiert, um einen korrigierten Wirkungsgrad zu berechnen (frei von den Differenzen an der Mixing Plane). Auf diesen korrigierten Wirkungsgrad wurden dann die Differenzen, die sich bei der vereinfachten Rohrströmung ergeben haben, wieder aufaddiert, unter der Annahme, dass sich die Aachen Turbine bei unterschiedlichen Eintrittsbedingungen ähnlich wie die Rohrströmung verhält. Damit ergaben sich folgende Abweichungen des Wirkungsgrads $\Delta \eta$ durch die Mixing Plane:
+Es ist zu sehen, dass die Massenströme vor und nach dem Stator-Rotor Interface für alle Einstrombedingungen annähernd gleich groß sind. Der Totaldruck sinkt um bis zu maximal $\Delta P_{t_{max}} \approx 93 Pa$, somit ist der Totaldruckverlust im Vergleich zu den vorherrschenden Totaldrücken $\frac{\Delta p_t}{p_t} \approx 10^{-4}$ klein. \newline Die Totaltemperatur ändert sich bei homogenen Temperaturrandbedingungen sowohl für schräge Einströmungsrandbedingungen als auch bei feinerem Gitter im Rotor kaum ($\Delta T_t < 0,05 K$). \newline
+Bei inhomogenen Temperaturrandbedingungen unterscheidet sich die Totaltemperatur vor und nach dem Interface um ungefähr $\Delta T_t \approx 0,8K$. Hier ist der Unterschied von $T_t$ im Vergleich zum vorher homogenen Temperaturfeld wesentlich größer. Insbesondere bei zusätzlichen Dralleintrittsbedingungen ergeben sich Totaltemperaturdifferenzen von bis zu $\Delta T_t \approx 1,8K$. Bei Dralleintrittsbedingungen mit inhomogenen Randbedingungen sind somit die Abweichung der Totaltemperatur ungefähr doppelt so hoch wie bei separater inhomogener Temperaturrandbedingung.\\
+Die Untersuchung der Mixing Plane erfolgt mit einer vereinfachten Turbine ohne Schaufeln. Bei diesem Fall wird im Rotor ohne Schaufeln keine Leistung erzeugt, sondern der Strömung Energie durch Rotation und Reibung zugeführt. Dies hat zur Folge, dass bei diesem Problemgebiet direkt keine Aussagen über den Wirkungsgrad wie bei einer Turbine getroffen werden kann. Um dennoch zumindest eine grobe Abschätzung der Veränderung des Wirkungsgrades durch die Mixing Plane zu erhalten, werden die Ergebnisse für $\Delta p_t$ und $\Delta T_t$ für diese Geometrie auf die Aachen Turbine übertragen. Dabei wird die Aachen Turbine mit dem gleichen Betriebspunkt wie die vereinfachte Rohrströmung gerechnet und die Differenzen an den beiden Interfaces Stator1-Rotor und Rotor-Stator2 betrachtet. Diese Differenzen werde im nächsten Schritt Wirkungsgradberechnung eliminiert, um einen korrigierten Wirkungsgrad zu erhalten (frei von den Differenzen an der Mixing Plane). Auf diesen korrigierten Wirkungsgrad werden dann die Differenzen, die sich bei der vereinfachten Rohrströmung ergeben haben, wieder aufaddiert, unter der Annahme, dass sich die Aachen Turbine bei unterschiedlichen Eintrittsbedingungen ähnlich wie die Rohrströmung verhält. Damit ergaben sich folgende Abweichungen des Wirkungsgrads $\Delta \eta$ durch die Mixing Plane:
 \begin{table}[htbp]
 \centering
 \caption{Abschätzung des Einflusses der MP auf den Wirkungsgrad}
@@ -127,7 +121,7 @@ DralleintrittsRB D&-5,629\% \\
 DralleintrittsRB E&-5,599\% \\
 DralleintrittsRB F&-5,808\% \\
 \midrule
-Instationär&$-8 \cdot 10^{-4}\%$ \\
+Instationär&-8 $\cdot 10^{-4}\%$ \\
 \end{tabular}
 \label{tab:kanalwg}
 \end{table}
