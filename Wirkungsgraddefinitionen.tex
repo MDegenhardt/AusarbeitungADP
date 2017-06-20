@@ -1,6 +1,6 @@
 \chapter{Wirkungsgradberechnung}
 \label{cha:wgberechnung}
-In diesem Kapitel werden die verschiedenen Möglichkeiten zur Berechnung des Wirkungsgrades bei Turbinen vorgestellt. Diese werden im Rahmen der Simulation der Aachen-Turbine getestet und die resultierenden Wirkungsgrade miteinander verglichen.
+In diesem Kapitel werden die verschiedenen Möglichkeiten zur Berechnung des Wirkungsgrades für Turbinen vorgestellt. Diese werden im Rahmen der Simulation der Aachen-Turbine getestet und die resultierenden Wirkungsgrade miteinander verglichen.
 %__________________________
 \section{Wirkungsgrad allgemein}
 Im Allgemeinen lautet die Gleichung für den Wirkungsgrad $\eta$ bei Turbinen 
@@ -8,39 +8,41 @@ Im Allgemeinen lautet die Gleichung für den Wirkungsgrad $\eta$ bei Turbinen
 \label{eq:wgallgemein}
 \eta =\frac{P}{\Delta H_{t_{is}}}
 \end{equation}
-mit der erzeugten der isentropen Totalenthalpiedifferenz $\Delta H_{t_{is}}$ und der erzeugten Leistung $P$.
+mit der isentropen Totalenthalpiedifferenz $\Delta H_{t_{is}}$ und der erzeugten Leistung $P$.
 Die isentrope Enthalpiedifferenz $\Delta H_{t_{is}}$ wird nach
 \begin{equation}
 \label{eq:wgnenner}
 \Delta H_{t_{is}} = \dot m \cdot c_p \cdot T_{t_{inlet}} \cdot \left[ \left( \frac{p_{t_{outlet}}}{p_{t_{inlet}}}\right)^\frac{\gamma-1}{\gamma}-1\right]
 \end{equation}
-mit dem Massenstrom $\dot m$, der spezifischen Wärmekapazität bei konstantem Druck $c_p$ (siehe Berechnungsweise Abschnitt \ref{subsec:spezWK}), der Totaltemperatur am Inlet $T_{t_{inlet}}$, dem Totaldruck am Inlet $p_{t_{inlet}}$, dem Totaldruck am Outlet $p_{t_{outlet}}$ und dem Isentropenexponenten $\gamma$ berechnet.\newline Für die Berechnung der erzeugten Leistung $P$ gibt es verschiedene Möglichkeiten, die im folgenden Abschnitt vorgestellt werden.
+mit dem Massenstrom $\dot m$, der spezifischen Wärmekapazität bei konstantem Druck $c_p$ (siehe Berechnungsweise Abschnitt \ref{subsec:spezWK}), der Totaltemperatur am Inlet $T_{t_{inlet}}$, dem Totaldruck am Inlet $p_{t_{inlet}}$, dem Totaldruck am Outlet $p_{t_{outlet}}$ und dem Isentropenexponenten $\gamma$ berechnet.\newline 
+Im folgenden Abschnitt werden verschiedene Definitionsmöglichkeiten für die erzeugte Leistung $P$ vorgestellt.
 %__________________________
-\section{Wirkungsgradberechnungsformeln}
+\section{Erzeugte Leistung}
 \label{sec:wirkungsgrade}
 Die erzeugte Leistung $P$ im Zähler der Gleichung \ref{eq:wgallgemein} für den Wirkungsgrad  lässt sich unter anderem mit einer der drei folgenden Gleichungen berechnen:\newline
-Mit Hilfe der tatsächlichen Totaltemperaturdifferenz $\Delta T_t$ nach
+Mit Hilfe der tatsächlichen Totaltemperaturdifferenz $\Delta T_t$ und der spezifischen Wärmekapazität $c_p$ nach:
 \begin{equation}
 \label{eq:wgzaehlertt}
 P_{\Delta T_t} = \dot m \cdot c_p \cdot \Delta T_t = \dot m \cdot c_p \cdot \left( T_{t_{inlet}}-T_{t_{outlet}} \right),
 \end{equation}
-mithilfe der Totalenthalpie am Inlet $h_{t_{inlet}}$ und Outlet $h_{t_{outlet}}$ (direkt aus CFX entnommen) nach
+mit Hilfe der Totalenthalpie am Inlet $h_{t_{inlet}}$ und Outlet $h_{t_{outlet}}$, welche direkt aus ANSYS CFX entnommen wird, nach:
 \begin{equation}
 \label{eq:wgzaehlerht}
 P_{\Delta h_t} = \dot m \cdot \Delta h_t = \dot m \cdot \left( h_{t_{inlet}}-h_{t_{outlet}} \right)
 \end{equation}
-oder mithilfe des Momentes $M_{Rotor}$ um die Rotationsachse an Blade und Hub im Rotor, der Drehzahl des Rotors $n_{Rotor}$ und der Winkelgeschwindigkeit $\omega$ nach 
+oder mit Hilfe des Momentes $M_{Rotor}$ um die Rotationsachse an Schaufel und Hub des Rotors, der Anzahl Rotoren $N_{Rotor}$ und der Drehzahl des Rotors $n_{Rotor}$ nach:
 \begin{equation}
 \label{eq:wgzaehlertorque}
-P_{torque} = M_{Rotor} \cdot n_{Rotor} \cdot \omega
+P_{torque} = M_{Rotor} \cdot N_{Rotor} \cdot n_{Rotor}
 \end{equation}
-Im kommenden Abschnitt wird die Berechnungsmöglichkeiten von $c_p$ aus den Gleichungen \ref{eq:wgnenner} und\ref{eq:wgzaehlertt} näher erläutert, da diese Auswirkungen auf die Wirkungsgradberechnung haben.
+Da auch die Berechnung der spezifischen Wärmekapazität $c_p$ aus den Gleichungen \ref{eq:wgnenner} und \ref{eq:wgzaehlertt} Einfluss auf den Wirkungsgrad haben kann, wird im kommenden Abschnitt näher auf dessen Definition eingegangen.
+
 \subsection{Spezifische Wärmekapazität}
 \label{subsec:spezWK}
-Die spezifische Wärmekapazität bei konstantem Druck $c_p$ ist eine temperaturabhängige Größe. Wenn die Temperaturdifferenz zwischen In- und Outlet sehr groß ist, verändert sich  zwischen In- und Outlet wesentlich und kann nicht mehr als konstant angenommen werden. Die temperaturabhängige Wärmekapazität $c_p$ lässt sich mit dem folgenden Polynom aus der Temperatur $T$ berechnen.  
+Die spezifische Wärmekapazität bei konstantem Druck $c_p$ ist eine temperaturabhängige Größe. Wenn die Temperaturdifferenz zwischen In- und Outlet sehr groß ist, verändert sich $c_p$ zwischen In- und Outlet wesentlich und kann somit nicht mehr als konstant angenommen werden. Die temperaturabhängige Wärmekapazität $c_p$ lässt sich mit dem folgenden Polynom in Abhängigkeit der Temperatur $T$ berechnen.  
 \begin{equation}
 \label{eq:cppolynom}
-c_p = \frac{a\cdot T^4-b\cdot T^3+c\cdot T^2-d\cdot T+e}{f}\frac{J} {kg K}
+c_p = \frac{a\cdot T^4-b\cdot T^3+c\cdot T^2-d\cdot T+e}{f}\frac{J} {kg \cdot K}
 \end{equation}
 Die Konstanten $a$ bis $f$ sind der folgenden Tabelle \ref{tab:cpparameter} zu entnehmen.
 \begin{table}[H]
@@ -53,7 +55,18 @@ $0.12934K^{-4}$&$596.633K^{-3}$&$933833K^{-2}$&$373,61\cdot10^6K^{-1}$&$105,01\c
 \end{tabular}
 \label{tab:cpparameter}
 \end{table}
-Bei der Berechnung der isentropen Enthalpiedifferenz $\Delta H_{t_{is}}$ aus Gleichung \ref{eq:wgnenner} wurde $c_p$ nach Gleichung \ref{eq:cppolynom} separat am In-/Outlet, aus dem arithmetischen Mittel der beiden Größen und in Abhängigkeit der isentropen Temperatur im Outlet berechnet, um den Einfluss der Berechnungsweise von $c_p$ auf die Berechnung des Wirkungsgrades zu analysieren.\newline
+Bei der Berechnung der isentropen Enthalpiedifferenz $\Delta H_{t_{is}}$ aus Gleichung \ref{eq:wgnenner} wurde $c_p$ nach Gleichung \ref{eq:cppolynom}
+\begin{itemize}
+	\item separat am In-/Outlet,
+	\item aus dem arithmetischen Mittel der beiden Größen,
+	\item in Abhängigkeit der isentropen Temperatur im Outlet
+\end{itemize}
+berechnet um den Einfluss der Berechnungsweise von $c_p$ auf die Berechnung des Wirkungsgrades zu analysieren.\\
+
+\begin{comment}
+ separat am In-/Outlet, aus dem arithmetischen Mittel der beiden Größen und in Abhängigkeit der isentropen Temperatur im Outlet berechnet, um den Einfluss der Berechnungsweise von $c_p$ auf die Berechnung des Wirkungsgrades zu analysieren.
+ \end{comment}
+
 Die verschiedenen Wirkungsgraddefinitionen in Abschnitt \ref{sec:wirkungsgrade} und Berechnungsweisen von $c_p$ wurden in CFX implementiert und miteinander verglichen. Das Ergebnis dieses Vergleichs wird im nächsten Abschnitt dargestellt.
 %__________________________
 \section{Wirkungsgrade bei der Aachen-Turbine}
