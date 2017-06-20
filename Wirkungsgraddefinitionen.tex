@@ -30,10 +30,10 @@ mit Hilfe der Totalenthalpie am Inlet $h_{t_{inlet}}$ und Outlet $h_{t_{outlet}}
 \label{eq:wgzaehlerht}
 P_{\Delta h_t} = \dot m \cdot \Delta h_t = \dot m \cdot \left( h_{t_{inlet}}-h_{t_{outlet}} \right)
 \end{equation}
-oder mit Hilfe des Momentes $M_{Rotor}$ um die Rotationsachse an Schaufel und Hub des Rotors, der Anzahl Rotoren $N_{Rotor}$ und der Drehzahl des Rotors $n_{Rotor}$ nach:
+oder mit Hilfe des Momentes $M_{Rotor}$ um die Rotationsachse an Schaufel und Hub des Rotors, der Anzahl Rotoren $N_{Rotor}$ und der Winkelgeschwindigkeit des Rotors $\omega_{Rotor}$ nach:
 \begin{equation}
 \label{eq:wgzaehlertorque}
-P_{torque} = M_{Rotor} \cdot N_{Rotor} \cdot n_{Rotor}
+P_{torque} = M_{Rotor} \cdot N_{Rotor} \cdot \omega_{Rotor}
 \end{equation}
 Da auch die Berechnung der spezifischen Wärmekapazität $c_p$ aus den Gleichungen \ref{eq:wgnenner} und \ref{eq:wgzaehlertt} Einfluss auf den Wirkungsgrad haben kann, wird im kommenden Abschnitt näher auf dessen Definition eingegangen.
 
@@ -63,12 +63,10 @@ Bei der Berechnung der isentropen Enthalpiedifferenz $\Delta H_{t_{is}}$ aus Gle
 \end{itemize}
 berechnet um den Einfluss der Berechnungsweise von $c_p$ auf die Berechnung des Wirkungsgrades zu analysieren.\\
 
-\begin{comment}
- separat am In-/Outlet, aus dem arithmetischen Mittel der beiden Größen und in Abhängigkeit der isentropen Temperatur im Outlet berechnet, um den Einfluss der Berechnungsweise von $c_p$ auf die Berechnung des Wirkungsgrades zu analysieren.
- \end{comment}
-
 Die verschiedenen Wirkungsgraddefinitionen in Abschnitt \ref{sec:wirkungsgrade} und Berechnungsweisen von $c_p$ wurden in CFX implementiert und miteinander verglichen. Das Ergebnis dieses Vergleichs wird im nächsten Abschnitt dargestellt.
 %__________________________
+
+\begin{comment}
 \section{Wirkungsgrade bei der Aachen-Turbine}
 \label{sec:wgaachen}
 Bei der Aachen-Turbine ergaben sich je nach Berechnungsart folgende Werte für den Wirkungsgrad:
@@ -86,7 +84,8 @@ $\eta_{torque}$& 85\% \\
 \label{tab:wgaachen}
 \end{table}
 Es ist zu sehen, dass .....
-
+\todo
+\end{comment}
 
 
 
