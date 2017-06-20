@@ -17,7 +17,7 @@ verwendet wurde. Es werden dabei nur 1 1/2 Stufen berechnet, um den Rechenaufwan
 	\caption{Eine dreidimensionale Ansicht der Aachen-Turbine mit Gitter.}
 	\label{fig:aachengebiet}
 \end{figure}
-Die Aachen-Turbine besteht aus zwei Statoren und einem Rotor. Der vordere Teil ist der erste Stator mit Einstrom, der mittlere Teil ist der Rotor und der hintere Teil ist der zweite Stator mit Ausstrom. Die Grenzen an den Seiten stellen Shroud und Hub dar. Oben und unten herrschen periodische Randbedingungen. Die Statoren sind jeweils durch ein Interface mit dem Rotor verbunden. Die Anzahl an Blades in Stator und Rotor sind der folgenden Tabelle \ref{tab:aachenabmessungen} zu entnehmen.
+Die Aachen-Turbine besteht aus zwei Statoren und einem Rotor. Die erste Domäne als Stator mit Einstrom, die mittlere Domäne als Rotor und die letzte Domäne als zweiter Stator mit Ausstrom. Die Grenzen oben und unten stellen Shroud und Hub dar. Links und rechts herrschen periodische Randbedingungen. Die Statoren sind jeweils durch ein Interface mit dem Rotor verbunden. Die Anzahl an Schaufeln in Stator und Rotor sind der Tabelle \ref{tab:aachenabmessungen} zu entnehmen.\newline
 \begin{table}[htbp]
 \centering
 \label{tab:aachenabmessungen}
@@ -32,10 +32,9 @@ Im folgenden Abschnitt wird der gewählte Betriebspunkt näher beschrieben.
 %________________________________________________________
 \section{Betriebspunkt}
 \label{subsec:aachensetup}
-Um den Betriebspunkt für die Simulationen dieser Arbeit festzulegen wurden als Orientierung die Randbedingungen zur Analyse der Aachen-Turbine von 
-\cite{ufi2001YaoDavis}
-%\textcolor{red}{\textbf{(Quelle: Unsteady Flow Investigations - Jixian Yao, %Roger L. Davis, Juan J. Alonso and Antony Jameson)}} 
-übernommen. Diese sind der folgenden Tabelle \ref{tab:aachensetup} zu entnehmen.
+Um den Betriebspunkt für die Simulationen dieser Arbeit festzulegen wird als Orientierung die Randbedingungen der Arbeit \glqq Unsteady Flow Investigations in an
+Axial Turbine Using the Massively
+Parallel Flow Solver TFLO\grqq \, \cite{ufi2001YaoDavis} zur Analyse der Aachen-Turbine übernommen. Diese sind der folgenden Tabelle \ref{tab:aachensetup} zu entnehmen.
 \begin{table}[H]
 \centering
 \caption{Betriebspunkt} \label{tab:aachensetup}
@@ -45,10 +44,8 @@ $T_{t_{Inlet}}$&$p_{t_{Inlet}}$&$Massenstrom$&$n_{Rotor}$\\
 $305 \, K$&$\approx152.000 \, Pa$&$7 \, \frac{kg}{s}$&$3500 \, \frac{rev}{min}$\\
 \end{tabular}
 \end{table}
-Der Totaldruck am Inlet wurde als Druckprofil, siehe Abbildung \ref{fig:ptinlet}, entsprechend den Daten der Arbeit \glqq Unsteady Flow Investigations in an
-Axial Turbine Using the Massively
-Parallel Flow Solver TFLO\grqq \, \cite[p. 4]{ufi2001YaoDavis} angenommen
-In den verschiedenen Aufgabenteilen wurden die Eintrittsbedingungen jedoch auch verändert, um zum Beispiel den Einfluss inhomogener Eintrittsbedingungen oder höherer Temperaturen zu untersuchen.
+Der Totaldruck am Inlet wird als Druckprofil, siehe Abbildung \ref{fig:ptinlet}, entsprechend den Daten von \cite[p. 4]{ufi2001YaoDavis} angenommen
+In den verschiedenen Aufgabenteilen werden die Eintrittsbedingungen jedoch auch verändert, um zum Beispiel den Einfluss inhomogener Eintrittsbedingungen oder höherer Temperaturen zu untersuchen.
 
 \begin{figure}[htbp]
 	\centering
