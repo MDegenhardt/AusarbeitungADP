@@ -1,4 +1,4 @@
-\documentclass[colorback,longdoc,bigchapter,accentcolor=tud2c,11pt]{tudreport}
+\documentclass[longdoc,bigchapter, colorback,accentcolor=tud1c,12pt,numbersubsubsec]{tudreport}
 
 \usepackage{hyperref}
 \usepackage{subfigure}
@@ -35,20 +35,22 @@
 \newcommand{\formel}{\textcolor{red}{\textbf{\\Formel\\}}}
 % Pfad entlang dem die Bilder gesucht werden.
 \graphicspath{{bilder/}}
+%Kopfzeile
+\linespread{1.2}                                 % Zeilenabstand
+\setlength{\parindent}{6mm}                      % Absatzeinzug
 
 \title{Sensitivität numerischer Vorhersagen des Wirkungsgrads von Hochdruckturbinen}
 \subtitle{ADP | Keijo Buss, Dominik Henzel, Markus Degenhardt, Simon Lippert }
 \subsubtitle{Betreuer: Faramarz Bakhtiari, Marius Schneider | Prof.Dr.-Ing.H.-P. Schiffer}
-
+\institution{Fachbereich Maschinenbau\\Institut für Gasturbinen,\\ Luft- und Raumfahrtantriebe}
 %Hier wird entweder ein Text für das Institut angewählt oder ein Logo
 %\institution{Fachgebiet fr \\Numerische Berechnungsverfahren \\im Maschinenbau}
-\setinstitutionlogo[height]{CE}
+%\setinstitutionlogo[height]{CE}
 
 %%% Untere Titelrückseite
 \lowertitleback{%
 	Keijo Buss, Dominik Henzel, Markus Degenhardt, Simon Lippert\\
 	Studiengang: Computational Engineering M.Sc.\\ \\
-	ADP\\
 	Thema: Sensitivität numerischer Vorhersagen des Wirkungsgrads von Hochdruckturbinen\\\\
 	Eingereicht: \today\\ \\
 	%Rahmeninformationen
@@ -64,13 +66,12 @@
 	\maketitle
 	% Verzeichnisse mit römischen Seitenzahlen
 	\cleardoublepage
-	\setcounter{page}{1}
-	\pagenumbering{roman} 
-	\include{eid} 
+	\pagenumbering{roman}
+	\addcontentsline{toc}{chapter}{Abstract}
 	\include{abstract}
+	\include{eid} 
 	\tableofcontents
-	\listoffigures
-	\listoftables
+
 	
 	% Eigentlicher Text mit arabischen Seitenzahlen
 	\cleardoublepage
@@ -85,11 +86,13 @@
 	\include{Kanalkapitel} %Dominik Keijo eingefügt
 	\include{auswertungstool}
 	
-	%% Bibliographie
-	\bibliographystyle{plain}
-	\bibliography{literatur}
-	%Appendix
-	%\appendix
-	%\include{anhanga}
+	
+	\listoffigures			            		             % Abbildungsverzeichnis
+	\addcontentsline{toc}{chapter}{List of Figures}
+	\listoftables                                    % Tabellen Verezeichnis
+	\addcontentsline{toc}{chapter}{List of Tables}
+	\bibliographystyle{plainnat}   			             % gibt den Stil des Literaturverzeichnises 
+	\bibliography{literatur}     		             % Literaturverzeichnis
+	\addcontentsline{toc}{chapter}{\bibname}         % hinzufügen ins Inhaltsverzeichnis
 \end{document} 
 
