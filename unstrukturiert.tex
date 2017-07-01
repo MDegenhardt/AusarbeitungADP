@@ -1,2 +1,26 @@
-\section{unstrukturiert}
-\todo
+\section{Unstrukturiertes Gitter}
+Um den Unterschied zwischen einem strukturierten und unstrukturierten Gitter festzustellen, wurden zusätzlich Berechnungen mit einem unstrukturierten durchgeführt. Diese Berechnungen konnten aufgrund einiger aufgetretener Probleme nicht hinreichend betrachtet werden.
+
+\subsection{Aufgetretene Probleme}
+Für den zweiten Stator liegt keine Geometrie, lediglich ein Netz vor. Somit war es nicht möglich ein unstrukturiertes Gitter für diesen zu erstellen. Für die Berechnungen wurde daher die Aachen-Turbine teilweise unstrukturiert und strukturiert betrachtet.\\
+Ein weiteres Problem stellt die Ausrichtung der ersten Stufe da.
+Bei dieser muss das Gitter verschiedene Transformationen durchlaufen:
+\begin{itemize}
+\item Rotation um die y-Achse um $90^\circ$
+\item Rotation um die x-Achse um $180^\circ$
+\item Spiegelung der Schaufel an der x,z-Ebene
+\item Translation des zweiten Stators entlang der z-Achse
+\end{itemize}
+Weiterhin lassen sich einige Punkte aus dem Setup des strukturierten Gitters durch die durchgeführten Transformationen nicht verwenden, da diese außerhalb des Rechengebiets liegen.\\
+Die Erstellung der unstrukturierten Gitter war aufgrund von Lizenzproblemen nicht immer möglich, was die Anzahl der durchgeführten Simulationen eingrenzt.
+\subsection{Erstellung des Gitters}
+Das unstrukturierte Gitter wurde mit Centaur erstellt. Zunächst wurde ein Referenzgitter mit den Defaultwerten gebildet. Für das Einstellen von $y^+$ wurde in einem ersten Test der gleiche Wandabstand wie im Falle des strukturierten Gitters verwendet. Nach einem ersten Test wurde dieser im Rotor auf $\todo$ verringert.
+\image von dem y+ von stator 1 und rotor
+Nach dem Einstellen von $y^+$ wurden wie im strukturierten Fall verschiedene Verfeinerungsstufen der Aachen-Turbine erstellt.
+\tabelle
+\subsubsection{Verwendung von Sources}
+Um das Gitter lokal an bestimmten Stellen zu verfeinern wurden sogenannte Sources in Centaur eingeführt.
+Eine davon regelt den unterschiedlichen Wandabstand von Blade zu dem von Hub, beziehungsweise Shroud.\\
+Eine Weitere verfeinert die Zellen im Nachlauf der Schaufel relativ um den Faktor $c = 0.8$
+\image
+Wie bei dem strukturierten Gitter wurde auch eine gezielte Verfeinerung im Spalt vorgenommen.
