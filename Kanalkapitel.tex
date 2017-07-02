@@ -90,12 +90,13 @@ Referenzlösung&+1,252e-05&-40,04&+0,043\\%&+0,15\%\\
 feineres Gitter im Rotor&+3,755e-06&-43,81&+0,043\\%&+0,15\%\\
 schräge Einströmung&-7,368e-06&-35,45&+0,026\\%&-0,04\% \\
 inhomogene TemperaturRB&+1,078e-06&+10,36&+0,794\\%&+2,29\% \\
-DralleintrittsRB A&-1,051e-05&-38,59&+1,764\\%&+5,45\% \\
-DralleintrittsRB B&-1,312e-05&-41,83&+1,632\\%&+5,04\% \\
-DralleintrittsRB C&-8,919e-06&-93,04&+1,719\\%&+5,12\% \\
-DralleintrittsRB D&-1,539e-05&+2,787&+1,597\\%&+5,11\% \\
-DralleintrittsRB E&+4,091e-06&-12,07&+1,576\\%&+4,99\% \\
-DralleintrittsRB F&+1,729e-06&-23,83&+1,626\\%&+5,10\% \\
+DralleintrittsRB A&+9.611e-06&+20.17&+0.012\\%&+5,45\% \\
+DralleintrittsRB A + Temperatur RB&-1,051e-05&-38,59&+1,764\\%&+5,45\% \\
+DralleintrittsRB B + Temperatur RB&-1,312e-05&-41,83&+1,632\\%&+5,04\% \\
+DralleintrittsRB C + Temperatur RB&-8,919e-06&-93,04&+1,719\\%&+5,12\% \\
+DralleintrittsRB D + Temperatur RB&-1,539e-05&+2,787&+1,597\\%&+5,11\% \\
+DralleintrittsRB E + Temperatur RB&+4,091e-06&-12,07&+1,576\\%&+4,99\% \\
+DralleintrittsRB F + Temperatur RB&+1,729e-06&-23,83&+1,626\\%&+5,10\% \\
 \midrule
 Instationär&+1,873e-07&-0,604&-2,466e-04\\%&+0\% \\
 \end{tabular}
@@ -130,7 +131,7 @@ Hierbei ist jedoch anzumerken, dass aufgrund der vielen Annahmen diese Abschätz
 \newpage
 \subsection{Fazit}
 \label{subsec:fazit}
-Die Berücksichtung des Einflusses der Mixing Plane für die Wirkungsgradbestimmung ist unerlässlich, sobald inhomogene Temperaturfelder an dem Interface auftreten. Hier sollten die Domains instationär mit einer Sliding Plane verbunden werden, um die Verfälschung der Strömung durch Mittelung an der Mixing Plane zu vermeiden. Außerdem ist hier zu erwähnen, dass in diesem Testfall nur der Einfluss eines einzelnen Interfaces untersucht wurde. Bei einer Simulationen von mehreren Turbinenstufen und somit der Verwendung von mehreren Interfaces summiert sich der Fehler am Interface.
+Die Berücksichtung des Einflusses der Mixing Plane für die Wirkungsgradbestimmung ist unerlässlich, sobald inhomogene Temperaturfelder oder an dem Interface auftreten oder die Strömung mit kleine Winkeln, das heißt schräg oder mit Drall, auf das Interface auftrifft. Hier sollten die Domänen instationär mit einer Sliding Plane verbunden werden, um die Verfälschung der Strömung durch Mittelung an der Mixing Plane zu vermeiden. Außerdem ist hier zu erwähnen, dass in diesem Testfall nur der Einfluss eines einzelnen Interfaces untersucht wurde. Bei einer Simulationen von mehreren Turbinenstufen und somit der Verwendung von mehreren Interfaces summiert sich der Fehler am Interface.
 
 %%% Local Variables: 
 %%% mode: latex

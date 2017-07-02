@@ -39,7 +39,7 @@ Da auch die Berechnung der spezifischen Wärmekapazität $c_p$ aus den Gleichung
 
 \subsection{Spezifische Wärmekapazität}
 \label{subsec:spezWK}
-Die spezifische Wärmekapazität bei konstantem Druck $c_p$ ist eine temperaturabhängige Größe. Wenn die Temperaturdifferenz zwischen In- und Outlet sehr groß ist, verändert sich $c_p$ zwischen In- und Outlet wesentlich und kann somit nicht mehr als konstant angenommen werden. Die temperaturabhängige Wärmekapazität $c_p$ lässt sich mit dem folgenden Polynom in Abhängigkeit der Temperatur $T$ berechnen.  
+Die spezifische Wärmekapazität bei konstantem Druck $c_p$ ist eine temperaturabhängige Größe. Wenn die Temperaturdifferenz zwischen In- und Outlet sehr groß ist, verändert sich $c_p$ zwischen In- und Outlet wesentlich und kann somit nicht mehr als konstant angenommen werden. Die temperaturabhängige Wärmekapazität $c_p$ lässt sich mit dem folgenden Polynom in Abhängigkeit der Temperatur $T$ berechnen, zu sehen in Abbilgung \ref{fig:cpPlot}.  
 \begin{equation}
 \label{eq:cppolynom}
 c_p = \frac{a\cdot T^4-b\cdot T^3+c\cdot T^2-d\cdot T+e}{f}\frac{J} {kg \cdot K}
@@ -47,14 +47,22 @@ c_p = \frac{a\cdot T^4-b\cdot T^3+c\cdot T^2-d\cdot T+e}{f}\frac{J} {kg \cdot K}
 Die Konstanten $a$ bis $f$ sind der folgenden Tabelle \ref{tab:cpparameter} zu entnehmen.
 \begin{table}[H]
 \centering
-\caption{Konstanten für die Berechnung von $c_p$}
+\caption{Konstanten für die Berechnung von $c_p$} \label{tab:cpparameter}
 \begin{tabular}{ c| c|c|c|c|c}
 $a$&$b$&$c$&$d$&$e$&$f$\\
 \hline
 $0.12934K^{-4}$&$596.633K^{-3}$&$933833K^{-2}$&$373,61\cdot10^6K^{-1}$&$105,01\cdot10^{10}$&$10^9$\\
 \end{tabular}
-\label{tab:cpparameter}
+
 \end{table}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.8\textwidth]{cp_Plot.eps}
+	\caption{Spez. Wärmekapazität temperaturabhängig} \label{fig:cpPlot}
+	
+\end{figure} 
+
 Bei der Berechnung der isentropen Enthalpiedifferenz $\Delta H_{t_{is}}$ aus Gleichung \ref{eq:wgnenner} wurde $c_p$ nach Gleichung \ref{eq:cppolynom}
 \begin{itemize}
 	\item separat am In-/Outlet,
