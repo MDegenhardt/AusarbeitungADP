@@ -1,14 +1,37 @@
 \section{Wirkungsgradberechnung}
 \label{cha:wgberechnung}
-In diesem Kapitel werden die verschiedenen Möglichkeiten zur Berechnung des Wirkungsgrades für Turbinen vorgestellt. Diese werden im Rahmen der Simulation der Aachen-Turbine getestet und die resultierenden Wirkungsgrade miteinander verglichen.
+Betrachtet man den Kreisprozess der Gasturbine - den Joule-Prozess - findet in der Turbine eine isentrope Entspannung bzw. Expansion statt. Aus dem ersten Hauptsatz der Thermodynamik ergibt sich mit adiabater Zustandsänderung und unter Vernachlässigung der Reibungsverluste die von der Turbine an den Verdichter abgegebene Leistung zu
+\begin{equation}
+\label{eq:leistungTurbine}
+P = \dot m (h_{t5} - h_{t4})
+\end{equation}
+wobei $h_{t5}$ die Totalenthalpie am Turbinenaustritt und $h_{t4}$ die Totalenthalpie am Turbineneintritt ist. 
+
+
+
 %__________________________
 \subsection{Wirkungsgrad allgemein}
-Im Allgemeinen lautet die Gleichung für den Wirkungsgrad $\eta$ bei Turbinen 
+
+Wie in Abb. \ref{fig:hsTurbine} zu sehen, ergibt sich der isentrope Wirkungsgrad aus dem Verhältnis der verlustbehafteten und der isentropen Enthalpiedifferenz bzw. dem Verhältnis der Turbinenleistungen zu:
+
+\begin{equation}
+\label{eq:leistungTurbine}
+\overline{\eta}_{t} = \frac{h_{t5} - h_{t4}}{\overline{h}_{t5} - h_{t4}} =  \frac{P}{ \overline{P}} 
+\end{equation}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.5\textwidth]{hsTurbine.png}
+	\caption{h-s-Diagramm der Turbine} \label{fig:hsTurbine}
+	
+\end{figure} 
+
+Oder umformuliert mit der isentropen Totalenthalpiedifferenz dargestellt durch $\Delta H_{t_{is}} = \overline{h}_{t5} - h_{t4}$ zu:
 \begin{equation}
 \label{eq:wgallgemein}
 \eta =\frac{P}{\Delta H_{t_{is}}}
 \end{equation}
-mit der isentropen Totalenthalpiedifferenz $\Delta H_{t_{is}}$ und der erzeugten Leistung $P$.
+
 Die isentrope Enthalpiedifferenz $\Delta H_{t_{is}}$ wird nach
 \begin{equation}
 \label{eq:wgnenner}
