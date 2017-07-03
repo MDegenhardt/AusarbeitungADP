@@ -30,8 +30,23 @@ Eine Weitere verfeinert die Zellen im Nachlauf der Schaufel relativ um den Fakto
 Wie bei dem strukturierten Gitter wurde auch eine gezielte Verfeinerung im Spalt vorgenommen.
 
 \subsection{Gitterstudie}
-Nach der Spaltverfeinerung wurde eine Gitterstudie mit verschiedenen Verfeinerungsstufen durchgeführt.
-\tabelle
+Nach der Spaltverfeinerung wurde eine Gitterstudie mit verschiedenen Verfeinerungsstufen, siehe Tabelle \ref{tab:verfeinerungenunstrukturiert} durchgeführt. In den Abbildungen \ref{fig:gitterunstrukturiert1stufe} und\ref{fig:gitterunstrukturiert15stufen} ist zu erkennen, dass die Wirkungsrgrade weiterhin in Abhängigkeit der Kontrollvolumenzahl steigen. Damit eine netzunabhängige Lösung ermittelt werden kann, müssten weitere Verfeinerungsstufen zwischen 2 und 3 und größer 3 gerechnet werden, bis kein Anstieg oder Absinken mehr zu erkennen ist. Dies war aufgrund von Lizenzproblemen nicht möglich.\\
+Für die Berechnungen mit einem temperaturabhängigen $c_p$ und für die Vergleiche mit dem strukturierten Gitter wurde das feinste Netz verwendet.
+\begin{table}[h]
+		\centering
+		\caption{Verfeinerungsstufen des unstrukturierten Gitters}
+	\begin{tabular}{ c| c | c| c| c}
+Verfeinerungsstufe	&	Stator 1	&		&	Rotor	&		\\
+&	Anzahl Knoten	&	Anzahl Elemente	&	Anzahl Knoten	&	Anzahl Elemente	\\
+\hline									
+0,5	&	61435	&	174098	&	281782	&	724470	\\
+1	&	147399	&	473211	&	638948	&	1741931	\\
+2	&	244772	&	880367	&	1007020	&	2835297	\\
+3	&	1196277	&	6457352	&	1880370	&	6844537	\\
+
+	\end{tabular}
+		\label{tab:verfeinerungenunstrukturiert}
+\end{table}
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[width=0.7\textwidth]{gitterstudieunstrukturiert1stufe.eps}
