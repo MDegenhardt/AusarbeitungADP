@@ -14,23 +14,19 @@ Bei dieser muss das Gitter verschiedene Transformationen durchlaufen:
 Weiterhin lassen sich einige Punkte aus dem Setup des strukturierten Gitters durch die durchgeführten Transformationen nicht verwenden, da diese außerhalb des Rechengebiets liegen.\\
 Die Erstellung der unstrukturierten Gitter war aufgrund von Lizenzproblemen nicht immer möglich, was die Anzahl der durchgeführten Simulationen eingrenzt.
 \subsection{Erstellung des Gitters}
-Das unstrukturierte Gitter wurde mit Centaur erstellt. Zunächst wurde ein Referenzgitter mit den Defaultwerten gebildet. Für das Einstellen von $y^+$ wurde in einem ersten Test der gleiche Wandabstand wie im Falle des strukturierten Gitters verwendet. Nach einem ersten Test wurde dieser im Rotor auf $\todo$ verringert. Die Verteilung von $y^+$ des ersten Stators und Rotors ist in Abbildung \ref{yplusunstrukturiert} dargestellt.
+Das unstrukturierte Gitter wurde mit Centaur erstellt. Zunächst wurde ein Referenzgitter mit den Defaultwerten gebildet. Für das Einstellen von $y^+$ wurde in einem ersten Test der gleiche Wandabstand wie im Falle des strukturierten Gitters verwendet. Nach einem ersten Test wurde dieser im Rotor verringert. Die Verteilung von $y^+$ des ersten Stators und Rotors ist in Abbildung \ref{yplusunstrukturiert} dargestellt.
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[width=0.7\textwidth]{yplusunstrukturiert.png}
 	\caption{$y^+$ des unstrukturierten Gitters} \label{yplusunstrukturiert}
 \end{figure}
-Nach dem Einstellen von $y^+$ wurden wie im strukturierten Fall verschiedene Verfeinerungsstufen der Aachen-Turbine erstellt.
-\tabelle
 \subsubsection{Verwendung von Sources}
 Um das Gitter lokal an bestimmten Stellen zu verfeinern wurden sogenannte Sources in Centaur eingeführt.
 Eine davon regelt den unterschiedlichen Wandabstand von Blade zu dem von Hub, beziehungsweise Shroud.\\
 Eine Weitere verfeinert die Zellen im Nachlauf der Schaufel relativ um den Faktor $c = 0.8$
-\image
-Wie bei dem strukturierten Gitter wurde auch eine gezielte Verfeinerung im Spalt vorgenommen.
 
 \subsection{Gitterstudie}
-Nach der Spaltverfeinerung wurde eine Gitterstudie mit verschiedenen Verfeinerungsstufen, siehe Tabelle \ref{tab:verfeinerungenunstrukturiert} durchgeführt. In den Abbildungen \ref{fig:gitterunstrukturiert1stufe} und\ref{fig:gitterunstrukturiert15stufen} ist zu erkennen, dass die Wirkungsrgrade weiterhin in Abhängigkeit der Kontrollvolumenzahl steigen. Damit eine netzunabhängige Lösung ermittelt werden kann, müssten weitere Verfeinerungsstufen zwischen 2 und 3 und größer 3 gerechnet werden, bis kein Anstieg oder Absinken mehr zu erkennen ist. Dies war aufgrund von Lizenzproblemen nicht möglich.\\
+Zuerst wurde der Spalt des Rotors wie beim strukturierten Gitter verfeinert. Anschließend wurde eine Gitterstudie mit verschiedenen Verfeinerungsstufen, siehe Tabelle \ref{tab:verfeinerungenunstrukturiert}, durchgeführt. In den Abbildungen \ref{fig:gitterunstrukturiert1stufe} und\ref{fig:gitterunstrukturiert15stufen} ist zu erkennen, dass die Wirkungsrgrade weiterhin in Abhängigkeit der Kontrollvolumenzahl steigen. Damit eine netzunabhängige Lösung ermittelt werden kann, müssten weitere Verfeinerungsstufen zwischen 2 und 3 und größer 3 gerechnet werden, bis kein Anstieg oder Absinken mehr zu erkennen ist. Dies war aufgrund von Lizenzproblemen bei Centaur nicht möglich.\\
 Für die Berechnungen mit einem temperaturabhängigen $c_p$ und für die Vergleiche mit dem strukturierten Gitter wurde das feinste Netz verwendet.
 \begin{table}[h]
 		\centering
@@ -42,7 +38,7 @@ Verfeinerungsstufe	&	Stator 1	&		&	Rotor	&		\\
 0,5	&	61435	&	174098	&	281782	&	724470	\\
 1	&	147399	&	473211	&	638948	&	1741931	\\
 2	&	244772	&	880367	&	1007020	&	2835297	\\
-3	&	1196277	&	6457352	&	1880370	&	6844537	\\
+\textbf{3}	&	\textbf{1196277}	&	\textbf{6457352}	&	\textbf{1880370}	&	\textbf{6844537}	\\
 
 	\end{tabular}
 		\label{tab:verfeinerungenunstrukturiert}
@@ -70,7 +66,7 @@ Verfeinerungsstufe	&	Stator 1	&		&	Rotor	&		\\
 	&		&	CpIs	&	Ave CpIS	&	Ave	&	mycp	\\
 	\hline
 	CFX	&	80,21 \%	&	70,86 \%	&	74,4 \%	&	74,83 \%	&	57,24 \%	\\
-	$c_p$ und $T_t$	&	80,1 \%	&	105,17 \%	&	79,74 \%	&	80,21 \%	&	84,97 \%	\\
+	$c_p$ und $T_t$	&	80,1 \%	&	\textcolor{red}{105,17 \%}	&	79,74 \%	&	80,21 \%	&	84,97 \%	\\
 	Torque	&	79,5 \%	&	70,23 \%	&	73,73 \%	&	74,17 \%	&	56,74 \%	\\
 	
 	\end{tabular}
