@@ -59,3 +59,20 @@ Verfeinerungsstufe	&	Stator 1	&		&	Rotor	&		\\
 	\caption{Gitterstudie des unstrukturierten Gitters für eine Stufe}
 	\label{fig:gitterunstrukturiert15stufen}
 \end{figure}
+
+\subsection{Temperaturabhängiges $c_p$}
+\begin{table}[H]
+	\centering
+	\caption{Vergleich der Wirkungsgraddefinitionen mit $c_p = f(t)$}
+	\begin{tabular}{ l| c | c c c c}
+	&	$c_p = const.$	&	$c_p(t)$	&		&		&		\\
+	\hline
+	&		&	CpIs	&	Ave CpIS	&	Ave	&	mycp	\\
+	\hline
+	CFX	&	80,21 \%	&	70,86 \%	&	74,4 \%	&	74,83 \%	&	57,24 \%	\\
+	$c_p$ und $T_t$	&	80,1 \%	&	105,17 \%	&	79,74 \%	&	80,21 \%	&	84,97 \%	\\
+	Torque	&	79,5 \%	&	70,23 \%	&	73,73 \%	&	74,17 \%	&	56,74 \%	\\
+	
+	\end{tabular}
+	\label{tab:unstrukturiertmycp}
+\end{table}
