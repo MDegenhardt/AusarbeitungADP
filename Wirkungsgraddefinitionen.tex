@@ -1,8 +1,8 @@
-\chapter{Wirkungsgradberechnung}
+\section{Wirkungsgradberechnung}
 \label{cha:wgberechnung}
 In diesem Kapitel werden die verschiedenen Möglichkeiten zur Berechnung des Wirkungsgrades für Turbinen vorgestellt. Diese werden im Rahmen der Simulation der Aachen-Turbine getestet und die resultierenden Wirkungsgrade miteinander verglichen.
 %__________________________
-\section{Wirkungsgrad allgemein}
+\subsection{Wirkungsgrad allgemein}
 Im Allgemeinen lautet die Gleichung für den Wirkungsgrad $\eta$ bei Turbinen 
 \begin{equation}
 \label{eq:wgallgemein}
@@ -17,7 +17,7 @@ Die isentrope Enthalpiedifferenz $\Delta H_{t_{is}}$ wird nach
 mit dem Massenstrom $\dot m$, der spezifischen Wärmekapazität bei konstantem Druck $c_p$ (siehe Berechnungsweise Abschnitt \ref{subsec:spezWK}), der Totaltemperatur am Inlet $T_{t_{inlet}}$, dem Totaldruck am Inlet $p_{t_{inlet}}$, dem Totaldruck am Outlet $p_{t_{outlet}}$ und dem Isentropenexponenten $\gamma$ berechnet.\newline 
 Im folgenden Abschnitt werden verschiedene Definitionsmöglichkeiten für die erzeugte Leistung $P$ vorgestellt.
 %__________________________
-\section{Erzeugte Leistung}
+\subsection{Erzeugte Leistung}
 \label{sec:wirkungsgrade}
 Die erzeugte Leistung $P$ im Zähler der Gleichung \ref{eq:wgallgemein} für den Wirkungsgrad  lässt sich unter anderem mit einer der drei folgenden Gleichungen berechnen:\newline
 Mit Hilfe der tatsächlichen Totaltemperaturdifferenz $\Delta T_t$ und der spezifischen Wärmekapazität $c_p$ nach:
@@ -37,7 +37,7 @@ P_{torque} = M_{Rotor} \cdot N_{Rotor} \cdot \omega_{Rotor}
 \end{equation}
 Da auch die Berechnung der spezifischen Wärmekapazität $c_p$ aus den Gleichungen \ref{eq:wgnenner} und \ref{eq:wgzaehlertt} Einfluss auf den Wirkungsgrad haben kann, wird im kommenden Abschnitt näher auf dessen Definition eingegangen.
 
-\subsection{Spezifische Wärmekapazität}
+\subsubsection{Spezifische Wärmekapazität}
 \label{subsec:spezWK}
 Die spezifische Wärmekapazität bei konstantem Druck $c_p$ ist eine temperaturabhängige Größe. Wenn die Temperaturdifferenz zwischen In- und Outlet sehr groß ist, verändert sich $c_p$ zwischen In- und Outlet wesentlich und kann somit nicht mehr als konstant angenommen werden. Die temperaturabhängige Wärmekapazität $c_p$ lässt sich mit dem folgenden Polynom in Abhängigkeit der Temperatur $T$ berechnen, zu sehen in Abbilgung \ref{fig:cpPlot}.  
 \begin{equation}
