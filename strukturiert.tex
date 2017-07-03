@@ -135,3 +135,20 @@ In realen Turbinen befinden sich an der Schaufel am Übergang zum Randbereich so
 	\includegraphics[width=0.7\textwidth]{filletDelle.png}
 	\caption{Delle in der Statorgeometrie} \label{imgFilletDelle}
 \end{figure} 
+
+\subsection{Temperaturabhängiges $c_p$}
+\begin{table}[H]
+	\centering
+	\caption{Vergleich der Wirkungsgraddefinitionen mit $c_p = f(t)$}
+	\begin{tabular}{ l| c | c c c c}
+	&	$c_p = const.$	&	$c_p(t)$	&		&		&		\\
+	\hline
+	&		&	CpIs	&	Ave CpIS	&	Ave	&	mycp	\\
+	\hline
+	CFX	&	81,24 \%	&	53,89\%	&	79,19 \%	&	79,19 \%	&	60,25\%	\\
+	$c_p$ und $T_t$	&	81,25\%	&	74,6 \%	&	78,3 \%	&	78,07\%	&	83,41 \%	\\
+	Torque	&	82,52\%	&	54,35 \%	&	80,11 \%	&	79,87 \%	&	60,77\%	\\
+	
+	\end{tabular}
+	\label{tab:strukturiertmycp}
+\end{table}
