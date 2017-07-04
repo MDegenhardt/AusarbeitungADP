@@ -1,7 +1,7 @@
 \chapter{Auswertungstool zur Gitterstudie}
 \label{cha:auswertungstool}
 Für die in dieser Ausarbeitung durchgeführten Gitterstudien wurde ein Auswertungstool in Matlab erstellt. Es eignet sich für die Auswertung von Gitterstudien aus CFX-Simulationen.\\
-Ziel war es eine einfache Bedienung mit wenigen Einstellmöglichkeiten zu ermöglichen, damit dieses Tool ohne vertiefte Matlab Kenntnisse genutzt werden kann.
+Ziel war es, eine einfache Bedienung mit wenigen Einstellmöglichkeiten zu ermöglichen, damit dieses Tool ohne vertiefte Matlab Kenntnisse genutzt werden kann.
 
 \begin{figure}[htbp]
 	\centering
@@ -10,11 +10,11 @@ Ziel war es eine einfache Bedienung mit wenigen Einstellmöglichkeiten zu ermög
 	\caption{Auswertungstool zur Gitterstudie}
 \end{figure}
 
-\section{Funktionsumpfang}
-Dieses Tool stellt alle Einträge einer .csv-Datei in umgekehrter Reihenfolge da. Dadurch werden die selbst erstellten User Points im Drop-Down Menü zuerst aufgelistet. Die zu betrachtende Größe wir über der Kontrollvolumenanzahl geplottet. Dabei mittelt das Tool die letzten $n$ Iterationen einer Simulation. Durch eine Export Funktion lassen sich die Diagramme in einem separaten Fenster öffnen und können zur weiteren Verwendung in verschiedene Formate exportiert werden.
+\section{Funktionsumfang}
+Dieses Tool stellt alle Einträge einer .csv-Datei in umgekehrter Reihenfolge da. Dadurch werden die selbst erstellten User Points im Drop-Down Menü zuerst aufgelistet. Die zu betrachtende Größe wird über der Kontrollvolumenanzahl geplottet. Dabei mittelt das Tool die letzten $n$ Iterationen einer Simulation. Durch eine Export Funktion lassen sich die Diagramme in einem separaten Fenster öffnen und können zur weiteren Verwendung in verschiedenen Formate exportiert werden.
 
 \section{Benutzung}
-Um dieses Tool zu verwenden muss die Funktion \texttt{GitterstudieCFX} in Matlab ausgeführt werden. Nun können über den Button \textit{Load .csv File} csv-Dateien einzeln eingeladen werden. Diese wurden vorher mit \texttt{cfx5mondata -res filename.res -out filename.csv} in der Konsole erzeugt. In dem sich öffnenden Dialogfenster muss die Kontrollvolumenzahl, beziehungsweise  die Verfeinerungsstufe der eingelesen Datei eingegeben werden. Nach dem Einlesen kann im Drop-Down Menü die darzustellende Größe ausgewählt werden. Über den Export-Button wird das Diagramm in einem Extra-Fenster geöffnet und lässt sich in verschiedenen Formaten abspeichern.
+Um das Tool zu verwenden, muss die Funktion \texttt{GitterstudieCFX} in Matlab ausgeführt werden. Nun können über den Button \textit{Load .csv File} csv-Dateien einzeln eingeladen werden. Diese wurden vorher mit \texttt{cfx5mondata -res filename.res -out filename.csv} in der Konsole erzeugt. In dem sich öffnenden Dialogfenster muss die Kontrollvolumenzahl, beziehungsweise  die Verfeinerungsstufe der eingelesen Datei eingegeben werden. Nach dem Einlesen kann im Drop-Down Menü die darzustellende Größe ausgewählt werden. Über den Export-Button wird das Diagramm in einem Extra-Fenster geöffnet und lässt sich in verschiedenen Formaten abspeichern.
 \subsection{Wichtige Hinweise}
 \lstset{language=Matlab}
 \begin{description}

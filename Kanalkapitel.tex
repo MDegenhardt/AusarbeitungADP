@@ -1,6 +1,6 @@
 \chapter{Stator/Rotor Interface}
 \label{cha:kanal}
-Bei der Berechnung des Wirkungsgrades führen geringe Abweichungen der Totaltemperatur zu großen Änderungen des Wirkungsgrades. An dem Stator-Rotor Interface kommt es bei Wahl einer sogenannten Mixing-Plane zur stationären Berechnung zu einem Ansteigen der Totaltemperatur. In diesem Kapitel wird zunächst die Funktionsweise der Mixing Plane erläutert und die Ergebnisse der Analyse des Einflusses der Mixing Plane bei unterschiedlichen Einstrombedingungen vorgestellt.
+Bei der Berechnung des Wirkungsgrades führen geringe Abweichungen der Totaltemperatur zu großen Änderungen des Wirkungsgrades. Am Stator-Rotor Interface kommt es bei Wahl einer sogenannten Mixing-Plane zur stationären Berechnung zu einem Ansteigen der Totaltemperatur. In diesem Kapitel wird zunächst die Funktionsweise der Mixing Plane erläutert und die Ergebnisse der Analyse des Einflusses der Mixing Plane bei unterschiedlichen Einstrombedingungen vorgestellt.
 %______________________________________________________
 \section{Mixing Plane / Stage}
 In dem verwendeten Setup der Aachenturbine werden die 1,5 Stufen in drei Domänen dargestellt. Hierbei kommt es zu einer Herausforderung; die Domänen müssen miteinander verbunden werden. Um dies zu bewerkstelligen, werden jeweils an den Verbindungsstellen von Stator zu Rotor und Rotor zu Stator sogenannte \textit{Interfaces} definiert.
@@ -8,12 +8,12 @@ Im Falle einer solchen Anordnung ist in CFX die \textit{General Connection} zu w
 Eine Möglichkeit ein solches Interface mittels General Connection zu definieren ist das Frozen Rotor Interface. Hierbei bleibt die relative Orientierung der Komponenten über die gesamte Berechnung erhalten. 
 Dieses Modell hat seine Vorteile bei großen Schwankungen der Strömungsgrößen in Umfangsrichtung.\\
 Eine weitere Untergruppe der \textit{General Connection} in CFX ist das Stage- oder Mixing Plane-Interface, welches für die Erstellung des in dieser Arbeit verwendeten Setups eingesetzt wird. Hierbei werden die Strömungsgrößen an der Verbindungsstelle über den Umfang gemittelt.
-Durch die Mittelung der Strömungsgrößen am Interface treten Vermischungsverluste auf. Laut ANSYS sind die hierbei entstehenden Verluste äquivalent zu den physikalischen Vermischungseffekten der zwischen Stator und Rotor und eines somit entstehenden Geschwindigkeitsprofils in entgegen der Strömungsrichtung. \cite{Sharcnet1}
+Durch die Mittelung der Strömungsgrößen am Interface treten Vermischungsverluste auf. Laut ANSYS sind die hierbei entstehenden Verluste äquivalent zu den physikalischen Vermischungseffekten zwischen Stator und Rotor und eines somit entstehenden Geschwindigkeitsprofils entgegen der Strömungsrichtung. \cite{Sharcnet1}
 
 %_____________________________________________________________________
 \section{Rohrauschnitt}
 \label{sec:kanalgeo}
-Anstelle der Aachen-Turbine wird für die Analyse des Stator-Rotor Interfaces ein Rohrausschnitt, geteilt in Stator und Rotor, berechnet um den Einfluss des Interfaces auf die Strömungsgrößen in Hinblick auf die Wirkungsgradberechnung zu testen. Dabei werden die Eintrittsbedingungen verändert und das Verhalten der Mixing-Plane unter unterschiedlichen Einströmbedingungen untersucht. In dem folgenden Abschnitt wird zunächst das Rechengebiet näher beschrieben.
+Anstelle der Aachen-Turbine wird für die Analyse des Stator-Rotor Interfaces ein Rohrausschnitt - geteilt in Stator und Rotor - berechnet, um den Einfluss des Interfaces auf die Strömungsgrößen in Hinblick auf die Wirkungsgradberechnung zu testen. Dabei werden die Eintrittsbedingungen verändert und das Verhalten der Mixing-Plane unter unterschiedlichen Einströmbedingungen untersucht. Im folgenden Abschnitt wird zunächst das Rechengebiet näher beschrieben.
 %________________________________________________________
 \subsection{Problemgebiet}
 \label{subsec:kanalproblemgebiet}
@@ -45,7 +45,7 @@ Nach Festlegen der Geometrie wird ein CAD-Modell und ein Gitter mit einem $y^+ \
 \begin{tabular}{ c| c| c| c| c}
 $N_x$&$N_r$&$N_\phi$&Gesamtanzahl Knoten&Gesamtanzahl KV\\
 \hline
-48&56&79 &424704&403260\\
+48 & 56 & 79 & 424704 & 403260\\
 \end{tabular}
 \label{tab:kanalgitter}
 \end{table}
@@ -55,7 +55,7 @@ Anschließend werden für dieses Gitter Strömungssimulationen mit unterschiedli
 %_____________________________________________________________________________
 \section{Einfluss des Stator-Rotor Interface auf den Wirkungsgrad}
 \label{kanaleinfluss}
-In diesem Abschnitt werden die unterschiedlichen verwendeten Eintrittsrandbedingungen näher erläutert und dann die Ergebnisse der verschiedenen Simulationen vorgestellt.
+In diesem Abschnitt werden die unterschiedlichen verwendeten Eintrittsrandbedingungen näher erläutert und die Ergebnisse der verschiedenen Simulationen vorgestellt.
 \subsection{Verwendete Eintrittsrandbedingungen}
 \label{subsec:kanalrandbedingungen}
 Bei dem Stator-Rotor Interface werden die Werte an den Knoten vor dem Interface nach Mittelung und Interpolation auf die Knoten nach dem Interface übertragen. Bei gleichem Gitter für Stator und Rotor können diese direkt zugeordnet werden. Deswegen wird für einen Testfall das Gitter im Rotor verfeinert, sodass die Zuordnung der Knoten interpoliert erfolgen muss.\newline
@@ -104,7 +104,7 @@ Instationär&+1,873e-07&-0,604&-2,466e-04\\%&+0\% \\
 \end{table}
 Es ist zu sehen, dass die Massenströme vor und nach dem Stator-Rotor Interface für alle Einstrombedingungen annähernd gleich groß sind. Der Totaldruck sinkt um bis zu maximal $\Delta P_{t_{max}} \approx 93 Pa$, somit ist der Totaldruckverlust im Vergleich zu den vorherrschenden Totaldrücken $\frac{\Delta p_t}{p_t} \approx 10^{-4}$ klein. \newline Die Totaltemperatur ändert sich bei homogenen Temperaturrandbedingungen sowohl für schräge Einströmungsrandbedingungen als auch bei feinerem Gitter im Rotor kaum ($\Delta T_t < 0,05 K$). \newline
 Bei inhomogenen Temperaturrandbedingungen unterscheidet sich die Totaltemperatur vor und nach dem Interface um ungefähr $\Delta T_t \approx 0,8K$. Hier ist der Unterschied von $T_t$ im Vergleich zum vorher homogenen Temperaturfeld wesentlich größer. Insbesondere bei zusätzlichen Dralleintrittsbedingungen ergeben sich Totaltemperaturdifferenzen von bis zu $\Delta T_t \approx 1,8K$. Bei Dralleintrittsbedingungen mit inhomogenen Randbedingungen sind somit die Abweichung der Totaltemperatur ungefähr doppelt so hoch wie bei separater inhomogener Temperaturrandbedingung.\\
-Die Untersuchung der Mixing Plane erfolgt mit einer vereinfachten Turbine ohne Schaufeln. Bei diesem Fall wird im Rotor ohne Schaufeln keine Leistung erzeugt, sondern der Strömung Energie durch Rotation und Reibung zugeführt. Dies hat zur Folge, dass bei diesem Problemgebiet direkt keine Aussagen über den Wirkungsgrad wie bei einer Turbine getroffen werden kann. Um dennoch zumindest eine grobe Abschätzung der Veränderung des Wirkungsgrades durch die Mixing Plane zu erhalten, werden die Ergebnisse für $\Delta p_t$ und $\Delta T_t$ für diese Geometrie auf die Aachen Turbine übertragen. Dabei wird die Aachen Turbine mit dem gleichen Betriebspunkt wie die vereinfachte Rohrströmung gerechnet und die Differenzen an den beiden Interfaces Stator1-Rotor und Rotor-Stator2 betrachtet. Diese Differenzen werde im nächsten Schritt Wirkungsgradberechnung eliminiert, um einen korrigierten Wirkungsgrad zu erhalten (frei von den Differenzen an der Mixing Plane). Auf diesen korrigierten Wirkungsgrad werden dann die Differenzen, die sich bei der vereinfachten Rohrströmung ergeben haben, wieder aufaddiert, unter der Annahme, dass sich die Aachen Turbine bei unterschiedlichen Eintrittsbedingungen ähnlich wie die Rohrströmung verhält. Damit ergaben sich folgende Abweichungen des Wirkungsgrads $\Delta \eta$ durch die Mixing Plane:
+Die Untersuchung der Mixing Plane erfolgt mit einer vereinfachten Turbine ohne Schaufeln. Bei diesem Fall wird im Rotor ohne Schaufeln keine Leistung erzeugt, sondern der Strömung Energie durch Rotation und Reibung zugeführt. Dies hat zur Folge, dass bei diesem Problemgebiet direkt keine Aussagen über den Wirkungsgrad wie bei einer Turbine getroffen werden kann. Um dennoch zumindest eine grobe Abschätzung der Veränderung des Wirkungsgrades durch die Mixing Plane zu erhalten, werden zunächst die Differenzen $\Delta p_t$ und $\Delta T_t$ an den beiden Interfaces für diese Geometrie auf die Aachen-Turbine übertragen. Dabei wird die Aachen-Turbine für den gleichen Betriebspunkt wie bei der vereinfachten Kanalströmung betrachtet und die Differenzen an den beiden Interfaces Stator1-Rotor und Rotor-Stator2 betrachtet. Diese Differenzen werden im nächsten Schritt für die Ausgangsgrößen eliminiert, um einen korrigierten Wirkungsgrad zu erhalten (frei von den Differenzen an der Mixing Plane). Auf diesen korrigierten Wirkungsgrad werden dann die Differenzen, die sich bei der vereinfachten Kanalströmung ergeben haben, wieder aufaddiert, unter der Annahme, dass sich die Aachen Turbine bei unterschiedlichen Eintrittsbedingungen ähnlich wie die Rohrströmung verhält. Damit ergaben sich folgende Abweichungen des Wirkungsgrads $\Delta \eta$ durch die Mixing Plane.
 \begin{table}[htbp]
 \centering
 \caption{Abschätzung des Einflusses der MP auf den Wirkungsgrad}
@@ -131,7 +131,7 @@ Hierbei ist jedoch anzumerken, dass aufgrund der vielen Annahmen diese Abschätz
 \newpage
 \subsection{Fazit}
 \label{subsec:fazit}
-Die Berücksichtung des Einflusses der Mixing Plane für die Wirkungsgradbestimmung ist unerlässlich, sobald inhomogene Temperaturfelder am Interface auftreten oder die Strömung mit kleine Winkeln, das heißt schräg oder mit Drall, auf das Interface auftrifft. Hier sollten die Domänen instationär mit einer Sliding Plane verbunden werden, um die Verfälschung der Strömung durch Mittelung an der Mixing Plane zu vermeiden. Außerdem ist hier zu erwähnen, dass in diesem Testfall nur der Einfluss eines einzelnen Interfaces untersucht wurde. Bei einer Simulationen von mehreren Turbinenstufen und somit der Verwendung von mehreren Interfaces summiert sich der Fehler am Interface.
+Die Berücksichtung des Einflusses der Mixing Plane für die Wirkungsgradbestimmung ist unerlässlich, sobald inhomogene Temperaturfelder am Interface auftreten oder die Strömung in einem Winkel, entweder schräg oder mit Drall, auf das Interface auftrifft. In einem solchen Fall sollten die Domänen instationär mit einer Sliding Plane verbunden werden, um die Verfälschung der Strömungsgrößen durch Mittelung an der Mixing Plane zu vermeiden. Außerdem ist hier zu erwähnen, dass in diesem Testfall nur der Einfluss eines einzelnen Interfaces untersucht wurde. Bei einer Simulationen von mehreren Turbinenstufen und somit der Verwendung von mehreren Interfaces summiert sich der Fehler an den einzelnen Interfaces.
 
 %%% Local Variables: 
 %%% mode: latex
