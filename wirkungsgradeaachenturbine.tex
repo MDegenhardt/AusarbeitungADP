@@ -33,21 +33,24 @@ Auffällig ist jedoch, dass es hierbei gravierende Unterschiede im Hinblick auf 
  \begin{figure}[htbp]
 	\centering
 	\includegraphics[width=0.8\textwidth]{massFlow_strukt.eps}
-	\caption{Massenstrom über in der Turbine, strukturiertes Gitter} \label{fig:massFlowStrukt}
+	\caption{Massenstrom in der Turbine, strukturiertes Gitter} \label{fig:massFlowStrukt}
 \end{figure} 
  \begin{figure}[htbp]
 	\centering
 	\includegraphics[width=0.8\textwidth]{massFlow_unstrukt.eps}
-	\caption{Massenstrom über in der Turbine, unstrukturiertes Gitter} \label{fig:massFlowUnstrukt}
+	\caption{Massenstrom in der Turbine, unstrukturiertes Gitter} \label{fig:massFlowUnstrukt}
 \end{figure} 
 \subsection{Wirkungsgrade mit temperaturabhängigem $c_p$}
 \begin{table}[H]
+	Für die Untersuchung der Wirkungsgrade unter Berücksichtigung der spezifischen Wärmekapazität in Abhängigkeit der Temperatur wurden die Definitionen aus Kapitel \ref{subsec:spezWK} verwendet. 
+	Als Resultate ergeben sich die Wirkungsgrade in Tabelle \ref{tab:strukturiertmycp} und \ref{tab:unstrukturiertmycp}. Hierbei ist durchaus eine Veränderung zu beobachten, welche jedoch nur teilweise auf die nun verwendete spezifische Wärmekapazität zurückzuführen ist. Ein größerer Faktor für die Veränderung der Wirkungsgrade ist die zu beobachtenden Änderungen des Massenstroms und die unterschiedliche Definition der verwendeten Wirkungsgrade. Für die Isentrope Leistung wird immer der Massenstrom gemessen am Einlauf der Turbine verwendet, während für den Wirkungsgrad $\eta_{c_p, T_t}$ zur Berechnung der erzeugten Leistung die lokalen Massenströme an Einlauf und Auslauf verwendet werden. selbst kleine Schwankungen des Massenstroms führen hierbei zu gravierenden Änderungen im Wirkungsgrad.
+	
 	\centering
 	\caption{Vergleich der Wirkungsgraddefinitionen auf einem strukturierten Gitter mit $c_p = f(T)$}
 	\begin{tabular}{ l| c | c c c c}
 		&	$c_p = const.$	&	$c_p(T)$	&		&		&		\\
 		\hline
-		&		&	CpIs	&	Ave CpIS	&	Ave	&	mycp	\\
+		&		&	$c_p^*$	&	$\overline{c_p^*}$	&	$\overline{c_p}$	&	$c_p$	\\
 		\hline
 		$\eta_{CFX}$	&	81,24 \%	&	53,89\%	&	79,19 \%	&	79,19 \%	&	60,25\%	\\
 		$\eta_{c_p, T_t}$	&	81,25\%	&	74,6 \%	&	78,3 \%	&	78,07\%	&	83,41 \%	\\
@@ -63,7 +66,7 @@ Auffällig ist jedoch, dass es hierbei gravierende Unterschiede im Hinblick auf 
 	\begin{tabular}{ l| c | c c c c}
 		&	$c_p = const.$	&	$c_p(T)$	&		&		&		\\
 		\hline
-		&		&	CpIs	&	Ave CpIS	&	Ave	&	mycp	\\
+		&		&$c_p^*$	&	$\overline{c_p^*}$	&	$\overline{c_p}$	&	$c_p$	\\
 		\hline
 		$\eta_{CFX}$	&	80,21 \%	&	71,93 \%	&	77,96 \%	&	78,34 \%	&	60,01 \%	\\
 		$\eta_{c_p, T_t}$	&	80,1 \%	&	\textcolor{red}{100,36} \%	&	78,23 \%	&	78,61\%	&	83,72 \%	\\
