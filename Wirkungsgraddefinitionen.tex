@@ -22,38 +22,39 @@ Wie in Abb. \ref{fig:hsTurbine} zu sehen, ergibt sich der isentrope Wirkungsgrad
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[width=0.5\textwidth]{hsTurbine.png}
-	\caption{h-s-Diagramm der Turbine} \label{fig:hsTurbine}
+	\caption{h-s-Diagramm der Turbine \cite[p. 42]{GLR-Skript}} \label{fig:hsTurbine}
 	
 \end{figure} 
 
-Oder umformuliert mit der isentropen Totalenthalpiedifferenz dargestellt durch $\Delta H_{t_{is}} = \overline{h}_{t5} - h_{t4}$ zu:
-\begin{equation}
+Oder umformuliert mit der isentropen Totalenthalpiedifferenz:
+\begin{align}
+\Delta H_{t_{is}} &= \overline{h}_{t5} - h_{t4}\\
 \label{eq:wgallgemein}
-\eta =\frac{P}{\Delta H_{t_{is}}}
-\end{equation}
+\eta &=\frac{P}{\Delta H_{t_{is}}}
+\end{align}
 
 Die isentrope Enthalpiedifferenz $\Delta H_{t_{is}}$ wird nach
 \begin{equation}
 \label{eq:wgnenner}
 \Delta H_{t_{is}} = \dot m \cdot c_p \cdot T_{t_{inlet}} \cdot \left[ \left( \frac{p_{t_{outlet}}}{p_{t_{inlet}}}\right)^\frac{\gamma-1}{\gamma}-1\right]
 \end{equation}
-mit dem Massenstrom $\dot m$, der spezifischen Wärmekapazität bei konstantem Druck $c_p$ (siehe Berechnungsweise Abschnitt \ref{subsec:spezWK}), der Totaltemperatur am Inlet $T_{t_{inlet}}$, dem Totaldruck am Inlet $p_{t_{inlet}}$, dem Totaldruck am Outlet $p_{t_{outlet}}$ und dem Isentropenexponenten $\gamma$ berechnet.\newline 
+mit dem Massenstrom $\dot m$, der spezifischen Wärmekapazität bei konstantem Druck $c_p$ (Berechnungsweise siehe Abschnitt \ref{subsec:spezWK}), der Totaltemperatur am Inlet $T_{t_{inlet}}$, dem Totaldruck am Inlet $p_{t_{inlet}}$, dem Totaldruck am Outlet $p_{t_{outlet}}$ und dem Isentropenexponenten $\gamma$ berechnet.\newline 
 Im folgenden Abschnitt werden verschiedene Definitionsmöglichkeiten für die erzeugte Leistung $P$ vorgestellt.
 %__________________________
 \subsection{Erzeugte Leistung}
 \label{sec:wirkungsgrade}
-Die erzeugte Leistung $P$ im Zähler der Gleichung \ref{eq:wgallgemein} für den Wirkungsgrad  lässt sich unter anderem mit einer der drei folgenden Gleichungen berechnen:\newline
-Mit Hilfe der tatsächlichen Totaltemperaturdifferenz $\Delta T_t$ und der spezifischen Wärmekapazität $c_p$ nach:
+Die erzeugte Leistung $P$ im Zähler der Gleichung \ref{eq:wgallgemein} für den Wirkungsgrad  lässt sich unter anderem mit einer der drei folgenden Gleichungen berechnen.\newline
+Mit Hilfe der tatsächlichen Totaltemperaturdifferenz $\Delta T_t$ und der spezifischen Wärmekapazität $c_p$:
 \begin{equation}
 \label{eq:wgzaehlertt}
 P_{\Delta T_t} = \dot m \cdot c_p \cdot \Delta T_t = \dot m \cdot c_p \cdot \left( T_{t_{inlet}}-T_{t_{outlet}} \right),
 \end{equation}
-mit Hilfe der Totalenthalpie am Inlet $h_{t_{inlet}}$ und Outlet $h_{t_{outlet}}$, welche direkt aus ANSYS CFX entnommen wird, nach:
+mit Hilfe der Totalenthalpie am Inlet $h_{t_{inlet}}$ und Outlet $h_{t_{outlet}}$, welche direkt aus ANSYS CFX entnommen wird:
 \begin{equation}
 \label{eq:wgzaehlerht}
 P_{\Delta h_t} = \dot m \cdot \Delta h_t = \dot m \cdot \left( h_{t_{inlet}}-h_{t_{outlet}} \right)
 \end{equation}
-oder mit Hilfe des Momentes $M_{Rotor}$ um die Rotationsachse an Schaufel und Hub des Rotors, der Anzahl Rotoren $N_{Rotor}$ und der Winkelgeschwindigkeit des Rotors $\omega_{Rotor}$ nach:
+oder mit Hilfe des Momentes $M_{Rotor}$ um die Rotationsachse an Schaufel und Hub des Rotors, der Anzahl Rotoren $N_{Rotor}$ und der Winkelgeschwindigkeit des Rotors $\omega_{Rotor}$:
 \begin{equation}
 \label{eq:wgzaehlertorque}
 P_{torque} = M_{Rotor} \cdot N_{Rotor} \cdot \omega_{Rotor}
@@ -62,7 +63,7 @@ Da auch die Berechnung der spezifischen Wärmekapazität $c_p$ aus den Gleichung
 
 \subsubsection{Spezifische Wärmekapazität}
 \label{subsec:spezWK}
-Die spezifische Wärmekapazität bei konstantem Druck $c_p$ ist eine temperaturabhängige Größe. Wenn die Temperaturdifferenz zwischen In- und Outlet sehr groß ist, verändert sich $c_p$ zwischen In- und Outlet wesentlich und kann somit nicht mehr als konstant angenommen werden. Die temperaturabhängige Wärmekapazität $c_p$ lässt sich mit dem folgenden Polynom in Abhängigkeit der Temperatur $T$ berechnen, zu sehen in Abbilgung \ref{fig:cpPlot}.  
+Die spezifische Wärmekapazität bei konstantem Druck $c_p$ ist eine temperaturabhängige Größe. Wenn die Temperaturdifferenz zwischen In- und Outlet sehr groß ist, verändert sich $c_p$ zwischen In- und Outlet wesentlich und kann somit nicht mehr als konstant angenommen werden. Die temperaturabhängige Wärmekapazität $c_p$ lässt sich mit dem folgenden Polynom in Abhängigkeit der Temperatur $T$ berechnen, zu sehen in Abbildung \ref{fig:cpPlot}.  
 \begin{equation}
 \label{eq:cppolynom}
 c_p = \frac{a\cdot T^4-b\cdot T^3+c\cdot T^2-d\cdot T+e}{f}\frac{J} {kg \cdot K}
@@ -88,14 +89,14 @@ $0.12934K^{-4}$&$596.633K^{-3}$&$933833K^{-2}$&$373,61\cdot10^6K^{-1}$&$105,01\c
 
 Bei der Berechnung der isentropen Enthalpiedifferenz $\Delta H_{t_{is}}$ aus Gleichung \ref{eq:wgnenner} wurde $c_p$ nach Gleichung \ref{eq:cppolynom}
 \begin{itemize}
-	\item separat am In-/Outlet: $c_{p_1} = c_p(T_1)\, ;\, c_{p_3} = c_p(T_3)$,
-	\item in Abhängigkeit der isentropen Temperatur im Outlet: $c_{p_3}^* = c_{p_3}(T_{3_{is}})$,
+	\item separat an In-/Outlet: $c_{p_1} = c_p(T_1)\, ;\, c_{p_3} = c_p(T_3)$,
+	\item in Abhängigkeit der isentropen Temperatur am Outlet: $c_{p_3}^* = c_{p_3}(T_{3_{is}})$,
 	\item aus dem arithmetischen Mittel der beiden Größen: $\bar{c_p} = \frac{c_{p_1} + c_{p_3}}{2}\, ;\, \bar{c_p^*} = \frac{c_{p_1} + c_{p_3}^*}{2}$
 	
 \end{itemize}
-berechnet um den Einfluss der Berechnungsweise von $c_p$ auf die Berechnung des Wirkungsgrades zu analysieren.\\
+berechnet, um den Einfluss der Berechnungsweise von $c_p$ auf die Berechnung des Wirkungsgrades zu analysieren.\\
 
-Die verschiedenen Wirkungsgraddefinitionen in Abschnitt \ref{sec:wirkungsgrade} und Berechnungsweisen von $c_p$ wurden in CFX implementiert und miteinander verglichen. Das Ergebnis dieses Vergleichs wird im nächsten Abschnitt dargestellt.
+Die verschiedenen Wirkungsgraddefinitionen in Abschnitt \ref{sec:wirkungsgrade} und Berechnungsweisen von $c_p$ wurden in CFX implementiert und miteinander verglichen. Das Ergebnis  wird im nächsten Abschnitt dargestellt.
 %__________________________
 
 \begin{comment}

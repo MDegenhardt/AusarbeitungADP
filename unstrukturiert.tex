@@ -2,13 +2,13 @@
 Um den Unterschied zwischen einem strukturierten und unstrukturierten Gitter festzustellen, wurden zusätzlich Berechnungen mit einem unstrukturierten durchgeführt. Diese Berechnungen konnten aufgrund einiger aufgetretener Probleme nicht hinreichend betrachtet werden.
 
 \subsection{Aufgetretene Probleme}
-Für den zweiten Stator liegt keine Geometrie, lediglich ein Netz vor. Somit war es nicht möglich ein unstrukturiertes Gitter für diesen zu erstellen. Für die Berechnungen wurde daher die Aachen-Turbine teilweise unstrukturiert und strukturiert betrachtet.\\
+Für den zweiten Stator liegt keine Geometrie, lediglich eine Netzdatei vor. Somit war es nicht möglich ein unstrukturiertes Gitter für diesen zu erstellen. Für die Berechnungen wurde daher die Aachen-Turbine teilweise unstrukturiert und strukturiert betrachtet.\\
 Ein weiteres Problem stellt die Ausrichtung der ersten Stufe da.
-Bei dieser muss das Gitter verschiedene Transformationen durchlaufen:
+Das Gitter muss verschiedene Transformationen durchlaufen:
 \begin{itemize}
-\item Rotation um die y-Achse um $90^\circ$
-\item Rotation um die x-Achse um $180^\circ$
-\item Spiegelung der Schaufel an der x,z-Ebene
+\item Rotation Stator 1 und Rotor um die y-Achse um $90^\circ$
+\item Rotation Stator 1 und Rotor um die x-Achse um $180^\circ$
+\item Spiegelung der Schaufeln von Stator 1 und Rotor an der x,z-Ebene
 \item Translation des zweiten Stators entlang der z-Achse
 \end{itemize}
 Weiterhin lassen sich einige Punkte aus dem Setup des strukturierten Gitters durch die durchgeführten Transformationen nicht verwenden, da diese außerhalb des Rechengebiets liegen.\\
@@ -22,11 +22,11 @@ Das unstrukturierte Gitter wurde mit Centaur erstellt. Zunächst wurde ein Refer
 \end{figure}
 \subsubsection{Verwendung von Sources}
 Um das Gitter lokal an bestimmten Stellen zu verfeinern wurden sogenannte Sources in Centaur eingeführt.
-Eine davon regelt den unterschiedlichen Wandabstand von Blade zu dem von Hub, beziehungsweise Shroud.\\
-Eine Weitere verfeinert die Zellen im Nachlauf der Schaufel relativ um den Faktor $c = 0.8$
+Eine davon regelt die unterschiedlichen Wandabstände von Blade, Hub und Shroud.\\
+Eine Weitere verfeinert die Zellen im Nachlauf der Schaufel relativ um den Faktor $c = 0.8$.
 
 \subsection{Gitterstudie}
-Zuerst wurde der Spalt des Rotors wie beim strukturierten Gitter verfeinert. Anschließend wurde eine Gitterstudie mit verschiedenen Verfeinerungsstufen, siehe Tabelle \ref{tab:verfeinerungenunstrukturiert}, durchgeführt. In den Abbildungen \ref{fig:gitterunstrukturiert1stufe} und\ref{fig:gitterunstrukturiert15stufen} ist zu erkennen, dass die Wirkungsrgrade weiterhin in Abhängigkeit der Kontrollvolumenzahl steigen. Damit eine netzunabhängige Lösung ermittelt werden kann, müssten weitere Verfeinerungsstufen zwischen 2 und 3 und größer 3 gerechnet werden, bis kein Anstieg oder Absinken mehr zu erkennen ist. Dies war aufgrund von Lizenzproblemen bei Centaur nicht möglich.\\
+Zuerst wurde der Spalt des Rotors wie beim strukturierten Gitter verfeinert. Anschließend wurde eine Gitterstudie mit verschiedenen Verfeinerungsstufen, siehe Tabelle \ref{tab:verfeinerungenunstrukturiert}, durchgeführt. In den Abbildungen \ref{fig:gitterunstrukturiert1stufe} und \ref{fig:gitterunstrukturiert15stufen} ist der Wirkungsgrad in \% über die Verfeinerungsstufen aufgetragen. Es ist zu erkennen, dass die Wirkungsgrade weiterhin in Abhängigkeit der Kontrollvolumenzahl steigen. Damit eine netzunabhängige Lösung ermittelt werden kann, müssten weitere Verfeinerungsstufen zwischen 2 und 3 und größer 3 gerechnet werden, bis kein Ansteigen oder Absinken mehr zu erkennen ist. Dies war aufgrund von Softwareproblemen nicht möglich.\\
 Für die Berechnungen mit einem temperaturabhängigen $c_p$ und für die Vergleiche mit dem strukturierten Gitter wurde das feinste Netz verwendet.
 \begin{table}[h]
 		\centering
@@ -55,20 +55,3 @@ Verfeinerungsstufe	&	Stator 1	&		&	Rotor	&		\\
 	\caption{Gitterstudie des unstrukturierten Gitters für eine Stufe}
 	\label{fig:gitterunstrukturiert15stufen}
 \end{figure}
-
-\subsection{Temperaturabhängiges $c_p$}
-\begin{table}[H]
-	\centering
-	\caption{Vergleich der Wirkungsgraddefinitionen mit $c_p = f(t)$}
-	\begin{tabular}{ l| c | c c c c}
-	&	$c_p = const.$	&	$c_p(t)$	&		&		&		\\
-	\hline
-	&		&	CpIs	&	Ave CpIS	&	Ave	&	mycp	\\
-	\hline
-CFX	&	80,21 \%	&	71,93 \%	&	77,96 \%	&	78,34 \%	&	60,01 \%	\\
-$c_p$ und $T_t$	&	80,1 \%	&	\textcolor{red}{100,36} \%	&	78,23 \%	&	78,61\%	&	83,72 \%	\\
-Torque	&	79,5 \%	&	70,23 \%	&	77,1 \%	&	77,48 \%	&	59,36 \%	\\
-
-	\end{tabular}
-	\label{tab:unstrukturiertmycp}
-\end{table}
