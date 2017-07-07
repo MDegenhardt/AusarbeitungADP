@@ -11,14 +11,14 @@ Ziel war es, eine einfache Bedienung mit wenigen Einstellmöglichkeiten zu ermö
 \end{figure}
 
 \section{Funktionsumfang}
-Dieses Tool stellt alle Einträge einer .csv-Datei in umgekehrter Reihenfolge da. Dadurch werden die selbst erstellten User Points im Drop-Down Menü zuerst aufgelistet. Die zu betrachtende Größe wird über der Kontrollvolumenanzahl geplottet. Dabei mittelt das Tool die letzten $n$ Iterationen einer Simulation. Durch eine Export Funktion lassen sich die Diagramme in einem separaten Fenster öffnen und können zur weiteren Verwendung in verschiedenen Formate exportiert werden.
+Dieses Tool stellt alle Einträge einer .csv-Datei in umgekehrter Reihenfolge da. Dadurch werden die selbst erstellten User Points im Drop-Down Menü zuerst aufgelistet. Die zu betrachtende Größe wird über der Kontrollvolumenanzahl geplottet. Dabei mittelt das Tool die letzten $n$ Iterationen einer Simulation. Durch eine Exportfunktion lassen sich die Diagramme in einem separaten Fenster öffnen und können zur weiteren Verwendung in verschiedenen Formate exportiert werden.
 
 \section{Benutzung}
 Um das Tool zu verwenden, muss die Funktion \texttt{GitterstudieCFX} in Matlab ausgeführt werden. Nun können über den Button \textit{Load .csv File} csv-Dateien einzeln eingeladen werden. Diese wurden vorher mit \texttt{cfx5mondata -res filename.res -out filename.csv} in der Konsole erzeugt. In dem sich öffnenden Dialogfenster muss die Kontrollvolumenzahl, beziehungsweise  die Verfeinerungsstufe der eingelesen Datei eingegeben werden. Nach dem Einlesen kann im Drop-Down Menü die darzustellende Größe ausgewählt werden. Über den Export-Button wird das Diagramm in einem Extra-Fenster geöffnet und lässt sich in verschiedenen Formaten abspeichern.
 \subsection{Wichtige Hinweise}
 \lstset{language=Matlab}
 \begin{description}
-\item Die Dateien müssen von der gröbsten bis zur feinsten Verfeinerung in aufsteigender Reihenfolge eingeladen werden. Ansonsten springt die blaue Linie wieder zurück
+\item Die Dateien müssen von der gröbsten bis zur feinsten Verfeinerung in aufsteigender Reihenfolge eingeladen werden.
 \item In den Definitionen der Userpoints in CFX dürfen keine Anführungszeichen verwendet werden. Diese dienen als Trennzeichen in der .csv-Datei und führen zu zu vielen Einträgen im Drop-Down-Menü. Dadurch stimmen die dargestellten Werte nicht mehr mit dem Diagramm überein.
 \item Die Schriftgröße der Achsenbeschriftung kann unter \texttt{FontSize} in den folgenden Zeilen verändert werden.
 \begin{lstlisting}[frame=single]
@@ -33,7 +33,6 @@ set(gca,'FontSize',14);
 \begin{lstlisting}[frame=single]
 plot(g(:), fPlot(:), '*-b', 'Linewidth',2);
 \end{lstlisting}
-\item Die Defaultwerte sorgen bereits für eine gute Lesbarkeit in Ausarbeitungen.
 \item Dieses Tool mittelt standardmäßig die letzten $n=100$ Iterationen einer Simulation. Dies kann allerdings vor dem Einlesen einer Datei in dem dazugehörigen Textfeld umgestellt werden. 
 \end{description}
 
