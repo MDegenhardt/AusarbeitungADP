@@ -1,6 +1,6 @@
 \section{Wirkungsgradberechnung}
 \label{sec:wgberechnung}
-Betrachtet man den Kreisprozess der Gasturbine - den Joule-Prozess - findet in der Turbine eine isentrope Entspannung bzw. Expansion statt. Aus dem ersten Hauptsatz der Thermodynamik ergibt sich mit adiabater Zustandsänderung und unter Vernachlässigung der Reibungsverluste die von der Turbine an den Verdichter abgegebene Leistung zu
+Betrachtet man den idealen Vergleichsprozess der Gasturbine - den Joule-Prozess - findet in der Turbine eine isentrope Entspannung bzw. Expansion statt. Aus dem ersten Hauptsatz der Thermodynamik ergibt sich wenn man die Kontrollvolumengrenzen mit dem Gehäuse zusammenlegt  ($P_R = 0$) und mit adiabater Zustandsänderung ($\dot Q = 0$) die von der Strömung an die Turbine abgegebene Leistung zu
 \begin{equation}
 \label{eq:leistungTurbine}
 P = \dot m (h_{t5} - h_{t4})
@@ -10,13 +10,13 @@ wobei $h_{t5}$ die Totalenthalpie am Turbinenaustritt und $h_{t4}$ die Totalenth
 
 
 %__________________________
-\subsection{Wirkungsgrad allgemein}
+\subsection{Turbinenwirkungsgrad}
 
 Wie in Abb. \ref{fig:hsTurbine} zu sehen, ergibt sich der isentrope Wirkungsgrad aus dem Verhältnis der verlustbehafteten und der isentropen Enthalpiedifferenz bzw. dem Verhältnis der Turbinenleistungen zu:
 
 \begin{equation}
 \label{eq:leistungTurbine}
-\overline{\eta}_{t} = \frac{h_{t5} - h_{t4}}{\overline{h}_{t5} - h_{t4}} =  \frac{P}{ \overline{P}} 
+\overline{\eta}_{t} = \frac{h_{t5} - h_{t4}}{\overline{h}_{t5} - h_{t4}} =  \frac{P}{ \overline{P}} \leq 1 
 \end{equation}
 
 \begin{figure}[htbp]
@@ -43,7 +43,7 @@ Im folgenden Abschnitt werden verschiedene Definitionsmöglichkeiten für die er
 %__________________________
 \subsection{Erzeugte Leistung}
 \label{sec:wirkungsgrade}
-Die erzeugte Leistung $P$ im Zähler der Gleichung \ref{eq:wgallgemein} für den Wirkungsgrad  lässt sich unter anderem mit einer der drei folgenden Gleichungen berechnen.\newline
+Die erzeugte Leistung $P$ im Zähler der Gleichung \ref{eq:wgallgemein} für den Wirkungsgrad  lässt sich unter anderem mit einer der drei folgenden Gleichungen berechnen. Dabei ist zu beachten, dass \ref{eq:wgzaehlertt} und \ref{eq:wgzaehlerht} thermodynamisch identisch sind, Unterschiede ergeben sich jedoch im Kontext von CFD. \ref{eq:wgzaehlertorque} stellt eine weitere Definition der Leistung dar.   \newline
 Mit Hilfe der tatsächlichen Totaltemperaturdifferenz $\Delta T_t$ und der spezifischen Wärmekapazität $c_p$:
 \begin{equation}
 \label{eq:wgzaehlertt}
@@ -54,16 +54,16 @@ mit Hilfe der Totalenthalpie am Inlet $h_{t_{inlet}}$ und Outlet $h_{t_{outlet}}
 \label{eq:wgzaehlerht}
 P_{\Delta h_t} = \dot m \cdot \Delta h_t = \dot m \cdot \left( h_{t_{inlet}}-h_{t_{outlet}} \right)
 \end{equation}
-oder mit Hilfe des Momentes $M_{Rotor}$ um die Rotationsachse an Schaufel und Hub des Rotors, der Anzahl Rotoren $N_{Rotor}$ und der Winkelgeschwindigkeit des Rotors $\omega_{Rotor}$:
+oder mit Hilfe des Momentes $M_{Rotor}$ um die Rotationsachse an Schaufel und Nabe des Rotors, der Anzahl Rotoren $N_{Rotor}$ und der Winkelgeschwindigkeit des Rotors $\omega_{Rotor}$:
 \begin{equation}
 \label{eq:wgzaehlertorque}
 P_{torque} = M_{Rotor} \cdot N_{Rotor} \cdot \omega_{Rotor}
 \end{equation}
-Da auch die Berechnung der spezifischen Wärmekapazität $c_p$ aus den Gleichungen \ref{eq:wgnenner} und \ref{eq:wgzaehlertt} Einfluss auf den Wirkungsgrad haben kann, wird im kommenden Abschnitt näher auf dessen Definition eingegangen.
+Da auch die Berechnung der spezifischen Wärmekapazität $c_p$ aus den Gleichungen \ref{eq:wgnenner} und \ref{eq:wgzaehlertt} Einfluss auf den Wirkungsgrad haben kann, wird im kommenden Abschnitt näher auf deren Definition eingegangen.
 
 \subsubsection{Spezifische Wärmekapazität}
 \label{subsec:spezWK}
-Die spezifische Wärmekapazität bei konstantem Druck $c_p$ ist eine temperaturabhängige Größe. Wenn die Temperaturdifferenz zwischen In- und Outlet sehr groß ist, verändert sich $c_p$ zwischen In- und Outlet wesentlich und kann somit nicht mehr als konstant angenommen werden. Die temperaturabhängige Wärmekapazität $c_p$ lässt sich mit dem folgenden Polynom in Abhängigkeit der Temperatur $T$ berechnen, zu sehen in Abbildung \ref{fig:cpPlot}.  
+Die spezifische Wärmekapazität bei konstantem Druck $c_p$ ist eine temperaturabhängige Größe. Wenn die Temperaturdifferenz zwischen In- und Outlet sehr groß ist, verändert sich $c_p$ zwischen In- und Outlet wesentlich und kann somit nicht mehr als konstant angenommen werden. Die temperaturabhängige Wärmekapazität $c_p$ eines für Triebwerksturbinen typischen Brennstoff-Luft-Gemisches lässt sich mit dem folgenden Polynom in Abhängigkeit der Temperatur $T$ approximieren, zu sehen in Abbildung \ref{fig:cpPlot}.  
 \begin{equation}
 \label{eq:cppolynom}
 c_p = \frac{a\cdot T^4-b\cdot T^3+c\cdot T^2-d\cdot T+e}{f}\frac{J} {kg \cdot K}

@@ -26,9 +26,9 @@ Dies kann an dem Übergang vom Rotor in den zweiten Stator liegen. Dort findet e
 Allerdings ist die durchgeführte Gitterstudie im unstrukturierten Fall nicht zufriedenstellend durchgeführt, was in den Abbildungen \ref{fig:gitterunstrukturiert1stufe} und \ref{fig:gitterunstrukturiert15stufen} zu erkennen ist. Daher fällt ein Vergleich der beiden Gittertypen schwer und ist nicht aussagekräftig. \\ 
 
 Aus den physikalischen Grundlagen zur Berechnung des Wirkungsgrades ist nach dem Satz der Massenerhaltung der Massenstrom über die gesamte Turbine konstant.
-Aufgrund numerischer Faktoren, sowie konstruktionsbedingt kann es jedoch zu Veränderungen im Massenstrom kommen. 
+Aufgrund numerischer Faktoren, sowie konstruktionsbedingt, z.B. durch Kühllufteinblasung kann es jedoch zu Veränderungen im Massenstrom kommen. 
 Insbesondere kommt es an den Verbindungsstellen der einzelnen Domänen zu Abweichungen. Hierzu wird in Kapitel \ref{cha:kanal} näher eingegangen.
-Auffällig ist jedoch, dass es hierbei gravierende Unterschiede im Hinblick auf die Gitterstrukturierung gibt. In Abbildung \ref{fig:massFlowUnstrukt} ist der Verlauf des Massenstroms durch die Turbine dargestellt. Die Position in der Turbine ist auf der Abszisse dargestellt, die Interfaces befinden sich bei 1 und 2. Auf der Ordinate ist der jeweilige Massenstrom aufgetragen. Für die unstrukturierte Vernetzung treten Massenstromunterschiede von $0,1664 \frac{kg}{s}$ auf. Im Vergleich dazu liegt die Massenstromabweichung für das strukturierte Gitter, siehe Abbildung \ref{fig:massFlowStrukt}, lediglich bei $0.00028\frac{kg}{s}$.
+Auffällig ist jedoch, dass es hierbei gravierende Unterschiede im Hinblick auf die Gittertopologie gibt. In Abbildung \ref{fig:massFlowUnstrukt} ist der Verlauf des Massenstroms durch die Turbine dargestellt. Die Position in der Turbine ist auf der Abszisse dargestellt, die Interfaces befinden sich bei 1 und 2. Auf der Ordinate ist der jeweilige Massenstrom aufgetragen. Für die unstrukturierte Vernetzung treten Massenstromunterschiede von $0,1664 \frac{kg}{s}$ auf. Im Vergleich dazu liegt die Massenstromabweichung für das strukturierte Gitter, siehe Abbildung \ref{fig:massFlowStrukt}, lediglich bei $0.00028\frac{kg}{s}$.
 
  \begin{figure}[htbp]
 	\centering
@@ -43,10 +43,10 @@ Auffällig ist jedoch, dass es hierbei gravierende Unterschiede im Hinblick auf 
 \subsection{Wirkungsgrade mit temperaturabhängigem $c_p$}
 \begin{table}[H]
 	Für die Untersuchung der Wirkungsgrade unter Berücksichtigung der spezifischen Wärmekapazität in Abhängigkeit der Temperatur wurden die Definitionen aus Kapitel \ref{subsec:spezWK} verwendet. 
-	Als Resultate ergeben sich die Wirkungsgrade in Tabelle \ref{tab:strukturiertmycp} und \ref{tab:unstrukturiertmycp}. Hierbei ist durchaus eine Veränderung zu beobachten, welche jedoch nur teilweise auf die nun verwendete spezifische Wärmekapazität zurückzuführen ist. Ein größerer Faktor für die Veränderung der Wirkungsgrade ist die zu beobachtenden Änderungen des Massenstroms und die unterschiedliche Definition der verwendeten Wirkungsgrade. Für die Isentrope Leistung wird immer der Massenstrom gemessen am Einlauf der Turbine verwendet, während für den Wirkungsgrad $\eta_{c_p, T_t}$ zur Berechnung der erzeugten Leistung die lokalen Massenströme an Einlauf und Auslauf verwendet werden. selbst kleine Schwankungen des Massenstroms führen hierbei zu gravierenden Änderungen im Wirkungsgrad.
+	Als Resultate ergeben sich die Wirkungsgrade in Tabelle \ref{tab:strukturiertmycp} und \ref{tab:unstrukturiertmycp}. Hierbei ist durchaus eine Veränderung zu beobachten, welche jedoch nur teilweise auf die nun verwendete spezifische Wärmekapazität zurückzuführen ist. Ein größerer Faktor für die Veränderung der Wirkungsgrade ist die zu beobachtende Änderung des Massenstroms und die unterschiedliche Definition der verwendeten Wirkungsgrade. Für die Isentrope Leistung wird immer der Massenstrom gemessen am Einlauf der Turbine verwendet, während für den Wirkungsgrad $\eta_{c_p, T_t}$ zur Berechnung der erzeugten Leistung die lokalen Massenströme an Einlauf und Auslauf verwendet werden. selbst kleine Schwankungen des Massenstroms führen hierbei zu gravierenden Änderungen im Wirkungsgrad.
 	
 	\centering
-	\caption{Vergleich der Wirkungsgraddefinitionen auf einem strukturierten Gitter mit $c_p = f(T)$}
+	\caption{Vergleich der Wirkungsgraddefinitionen auf dem strukturierten Gitter mit $c_p = f(T)$}
 	\begin{tabular}{ l| c | c c c c}
 		&	$c_p = const.$	&	$c_p(T)$	&		&		&		\\
 		\hline
@@ -62,7 +62,7 @@ Auffällig ist jedoch, dass es hierbei gravierende Unterschiede im Hinblick auf 
 
 \begin{table}[H]
 	\centering
-	\caption{Vergleich der Wirkungsgraddefinitionen auf einem unstrukturierten Gitter mit $c_p = f(T)$}
+	\caption{Vergleich der Wirkungsgraddefinitionen auf dem feinsten unstrukturierten Gitter mit $c_p = f(T)$}
 	\begin{tabular}{ l| c | c c c c}
 		&	$c_p = const.$	&	$c_p(T)$	&		&		&		\\
 		\hline
