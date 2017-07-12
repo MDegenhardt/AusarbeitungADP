@@ -3,17 +3,17 @@
 Bei der Berechnung des Wirkungsgrades führen geringe Abweichungen der Totaltemperatur zu großen Änderungen des Wirkungsgrades. Am Stator-Rotor Interface kommt es bei Wahl einer sogenannten Mixing-Plane zur stationären Berechnung zu einem Ansteigen der Totaltemperatur. In diesem Kapitel wird zunächst die Funktionsweise der Mixing Plane erläutert und die Ergebnisse der Analyse des Einflusses der Mixing Plane bei unterschiedlichen Einstrombedingungen vorgestellt.
 %______________________________________________________
 \section{Mixing Plane / Stage}
-In dem verwendeten Setup der Aachenturbine werden die 1,5 Stufen in drei Domänen dargestellt. Hierbei kommt es zu einer Herausforderung; die Domänen müssen miteinander verbunden werden. Um dies zu bewerkstelligen, werden jeweils an den Verbindungsstellen von Stator zu Rotor und Rotor zu Stator sogenannte \textit{Interfaces} definiert.
-Im Falle einer solchen Anordnung ist in CFX die \textit{General Connection} zu wählen, da sich rotierende an stationäre Domänen anschließen.\\
-Eine Möglichkeit ein solches Interface mittels General Connection zu definieren ist das Frozen Rotor Interface. Hierbei bleibt die relative Orientierung der Komponenten über die gesamte Berechnung erhalten. 
+In dem verwendeten Setup der Aachenturbine werden die 1,5 Stufen in drei Domänen dargestellt. Hierbei kommt es zu einer Herausforderung; die Domänen müssen miteinander verbunden werden. Um dies zu bewerkstelligen, werden jeweils an den Verbindungsstellen von Stator zu Rotor und Rotor zu Stator sogenannte \textit{\glqq Interfaces\grqq} definiert.
+Im Falle einer solchen Anordnung ist in CFX die \textit{\glqq General Connection\grqq} zu wählen, da sich rotierende an stationäre Domänen anschließen.\\
+Eine Möglichkeit ein solches Interface mittels \textit{\glqq General Connection\grqq} zu definieren ist das \textit{\glqq Frozen Rotor\grqq} Interface. Hierbei bleibt die relative Orientierung der Komponenten über die gesamte Berechnung erhalten. 
 Dieses Modell hat seine Vorteile bei großen Schwankungen der Strömungsgrößen in Umfangsrichtung.\\
-Eine weitere Untergruppe der \textit{General Connection} in CFX ist das Stage- oder Mixing Plane-Interface, welches für die Erstellung des in dieser Arbeit verwendeten Setups eingesetzt wird. Hierbei werden die Strömungsgrößen an der Verbindungsstelle über den Umfang gemittelt.
+Eine weitere Untergruppe der \textit{\glqq General Connection\grqq} in CFX ist das \textit{\glqq Stage-\grqq} oder \textit{\glqq Mixing Plane-Interface\grqq}, welches für die Erstellung des in dieser Arbeit verwendeten Setups eingesetzt wird. Hierbei werden die Strömungsgrößen an der Verbindungsstelle über den Umfang gemittelt.
 Durch die Mittelung der Strömungsgrößen am Interface treten Vermischungsverluste auf. Laut ANSYS sind die hierbei entstehenden Verluste äquivalent zu den physikalischen Vermischungseffekten zwischen Stator und Rotor und eines somit entstehenden Geschwindigkeitsprofils entgegen der Strömungsrichtung. \cite{Sharcnet1}
 
 %_____________________________________________________________________
 \section{Rohrauschnitt}
 \label{sec:kanalgeo}
-Anstelle der Aachen-Turbine wird für die Analyse des Stator-Rotor Interfaces ein Rohrausschnitt - geteilt in Stator und Rotor - berechnet, um den Einfluss des Interfaces auf die Strömungsgrößen in Hinblick auf die Wirkungsgradberechnung zu testen. Dabei werden die Eintrittsbedingungen verändert und das Verhalten der Mixing-Plane unter unterschiedlichen Einströmbedingungen untersucht. Im folgenden Abschnitt wird zunächst das Rechengebiet näher beschrieben.
+Anstelle der Aachen-Turbine wird für die Analyse des Stator-Rotor Interfaces ein Rohrausschnitt - geteilt in Stator und Rotor - berechnet, um den Einfluss des Interfaces auf die $  $Strömungsgrößen in Hinblick auf die Wirkungsgradberechnung zu testen. Dabei werden die Eintrittsbedingungen verändert und das Verhalten der Mixing-Plane unter unterschiedlichen Einströmbedingungen untersucht. Im folgenden Abschnitt wird zunächst das Rechengebiet näher beschrieben.
 %________________________________________________________
 \subsection{Problemgebiet}
 \label{subsec:kanalproblemgebiet}
@@ -23,7 +23,7 @@ Die Geometrie des Rohrausschnitts mit Gitter ist in der Abbildung \ref{fig:kanal
 \caption{Eine dreidimensionale Ansicht der vereinfachten Aachen-Turbine mit Gitter}
 \label{fig:kanalgebiet}
 \end{figure}
-Die vereinfachte Turbine besteht aus einem Stator und einem Rotor. An der Vorderseite befindet sich der Einstrom, an den Seiten jeweils periodische Randbedingungen, an der Rückseite ist der Ausstrom. Die Grenzen an der Ober- und Unterseite stellen Gehäuse und Habe dar, sie repräsentieren somit Wandrandbedingungen. Stator und Rotor sind mit einem Interface verbunden. Das Verhältnis der Abmessungen dieses Rohrausschnitts entspricht den Größenverhältnissen der Aachen-Turbine und sind der Tabelle \ref{tab:kanalabmessungen} zu entnehmen.
+Der Kanal besteht aus einem Stator und einem Rotor. An der Vorderseite befindet sich das Inlet, an den Seiten jeweils periodische Randbedingungen, an der Rückseite ist das Outlet. Die Grenzen an der Ober- und Unterseite stellen Gehäuse und Habe dar, sie repräsentieren somit Wandrandbedingungen. Stator und Rotor sind mit einem Interface verbunden. Das Verhältnis der Abmessungen dieses Rohrausschnitts entspricht den Größenverhältnissen der Aachen-Turbine und sind der Tabelle \ref{tab:kanalabmessungen} zu entnehmen.
 \begin{table}[H]
 \centering
 \label{tab:kanalabmessungen}
@@ -90,7 +90,7 @@ Referenzlösung&+1,252e-05&-40,04&+0,043\\%&+0,15\%\\
 feineres Gitter im Rotor&+3,755e-06&-43,81&+0,043\\%&+0,15\%\\
 schräge Einströmung&-7,368e-06&-35,45&+0,026\\%&-0,04\% \\
 inhomogene TemperaturRB&+1,078e-06&+10,36&+0,794\\%&+2,29\% \\
-DralleintrittsRB A&+9.611e-06&+20.17&+0.012\\%&+5,45\% \\
+DralleintrittsRB A&+9,611e-06&+20,17&+0,012\\%&+5,45\% \\
 DralleintrittsRB A + Temperatur RB&-1,051e-05&-38,59&+1,764\\%&+5,45\% \\
 DralleintrittsRB B + Temperatur RB&-1,312e-05&-41,83&+1,632\\%&+5,04\% \\
 DralleintrittsRB C + Temperatur RB&-8,919e-06&-93,04&+1,719\\%&+5,12\% \\
